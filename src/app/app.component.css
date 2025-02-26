@@ -133,8 +133,8 @@
 }
 
 .navbar-light.sticky-top {
-    top: -100px;
-    transition: .5s;
+    top: 0px;
+    transition: top .5s;
 }
 
 @media (min-width: 992px) {
