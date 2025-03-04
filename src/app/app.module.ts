@@ -7,7 +7,7 @@ import { ServicesComponent } from './services/services.component';
 import { AboutComponent } from './about/about.component';
 import { TopbarComponentComponent } from './topbar-component/topbar-component.component';
 import { BookingComponent } from './booking/booking.component';
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app.routes';
 
 @NgModule({
   declarations: [
