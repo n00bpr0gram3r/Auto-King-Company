@@ -7,12 +7,13 @@ import { ServicesComponent } from './services/services.component';
 import { AboutComponent } from './about/about.component';
 import { TopbarComponentComponent } from './topbar-component/topbar-component.component';
 import { BookingComponent } from './booking/booking.component';
-import { AppRoutingModule } from './app.routes';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
+    HomeComponent,
     CarouselComponent,
     ServicesComponent,
     AboutComponent,
@@ -20,8 +21,7 @@ import { AppRoutingModule } from './app.routes';
     BookingComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]

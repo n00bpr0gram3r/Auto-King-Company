@@ -1,15 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
-import { FooterComponent } from './footer/footer.component';
-import { CarouselComponent } from './carousel/carousel.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { TopbarComponentComponent } from './topbar-component/topbar-component.component';
+import { RouterOutlet } from '@angular/router';
+
+
 
 
 @Component({
   selector: 'app-root',
-  imports: [ RouterOutlet, FooterComponent, NavbarComponent, TopbarComponentComponent],
   templateUrl: './app.component.html',
+  imports: [RouterOutlet],
   styleUrl: './app.component.css'
 })
 export class AppComponent {
