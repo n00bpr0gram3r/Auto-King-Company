@@ -34,6 +34,8 @@
               "node_modules/font-awesome/css/font-awesome.min.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "node_modules/animate.css/animate.min.css",
+              "node_modules/animate.css/animate.css",
               "node_modules/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css"
             ],
             "scripts": [
@@ -45,6 +47,7 @@
               "node_modules/counterup/jquery.counterup.min.js",
               "node_modules/owl.carousel/dist/owl.carousel.min.js",
               "node_modules/moment/min/moment.min.js",
+               "node_modules/counterup/jquery.counterup.min.js",
               "node_modules/moment-timezone/builds/moment-timezone-with-data.min.js",
               "node_modules/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js",
               "src/assets/js/main.js"
