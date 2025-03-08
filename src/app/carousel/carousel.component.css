@@ -1,12 +1,12 @@
-
 /*** Header ***/
 .carousel-caption {
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, .7);
+    background: rgba(0, 0, 0, 0.6);
     z-index: 1;
+    border-radius: 10px;
 }
 
 .carousel-control-prev,
@@ -32,6 +32,10 @@
         height: 100%;
         object-fit: cover;
     }
+
+    .service-content.text-truncate {
+        max-height: 3.6em;
+    }
 }
 
 .page-header {
@@ -46,4 +50,42 @@
 
 .breadcrumb-item+.breadcrumb-item::before {
     color: var(--light);
+}
+
+.service-content {
+    transition: all 0.3s ease;
+}
+
+.service-content.text-truncate {
+    max-height: 4.5em;
+    overflow: hidden;
+}
+
+.service-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.service-content ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.service-content ul li:before {
+    content: "✓";
+    color: var(--primary);
+    position: absolute;
+    left: 0;
+}
+
+.btn-link {
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
 }
