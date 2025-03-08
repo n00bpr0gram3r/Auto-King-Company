@@ -7,9 +7,15 @@
                     <div class="container">
                         <div class="row align-items-center justify-content-center justify-content-lg-start">
                             <div class="col-10 col-lg-7 text-center text-lg-start">
-                                <h6 class="text-white text-uppercase mb-3 animated slideInDown">Premium Auto Services in Eastern Province</h6>
-                                <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">Expert Vehicle Repairs & Maintenance in Dammam</h1>
-                                <a href="#services" class="btn btn-primary py-3 px-5 animated slideInDown">Explore Services<i class="fa fa-arrow-right ms-3"></i></a>
+                                <h6 class="text-white text-uppercase mb-3 animated slideInDown">
+                                    {{ getTranslation('premiumServices') }}
+                                </h6>
+                                <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">
+                                    {{ getTranslation('expertRepairs') }}
+                                </h1>
+                                <a href="#services" class="btn btn-primary py-3 px-5 animated slideInDown">
+                                    {{ getTranslation('exploreServices') }}<i class="fa fa-arrow-right ms-3"></i>
+                                </a>
                             </div>
                             <div class="col-lg-5 d-none d-lg-flex animated zoomIn">
                                 <img class="img-fluid" src="./assets/img/carousel-1.png" alt="Professional Auto Service">
@@ -24,9 +30,15 @@
                     <div class="container">
                         <div class="row align-items-center justify-content-center justify-content-lg-start">
                             <div class="col-10 col-lg-7 text-center text-lg-start">
-                                <h6 class="text-white text-uppercase mb-3 animated slideInDown">Trusted Vehicle Care</h6>
-                                <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">24-Hour Service Guarantee</h1>
-                                <a href="#membership" class="btn btn-primary py-3 px-5 animated slideInDown">Join Membership<i class="fa fa-arrow-right ms-3"></i></a>
+                                <h6 class="text-white text-uppercase mb-3 animated slideInDown">
+                                    {{ getTranslation('trustedCare') }}
+                                </h6>
+                                <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">
+                                    {{ getTranslation('serviceGuarantee') }}
+                                </h1>
+                                <a href="#membership" class="btn btn-primary py-3 px-5 animated slideInDown">
+                                    {{ getTranslation('joinMembership') }}<i class="fa fa-arrow-right ms-3"></i>
+                                </a>
                             </div>
                             <div class="col-lg-5 d-none d-lg-flex animated zoomIn">
                                 <img class="img-fluid" src="./assets/img/carousel-2.png" alt="Premium Auto Maintenance">
@@ -51,64 +63,64 @@
     <div class="container">
         <div class="row g-4">
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="d-flex py-5 px-4">
+                <div class="service-box d-flex py-5 px-4">
                     <i class="fa fa-certificate fa-3x text-primary flex-shrink-0"></i>
                     <div class="ps-4">
-                        <h5 class="mb-3">Quality Servicing</h5>
+                        <h5 class="mb-3">{{ getTranslation('qualityServicing') }}</h5>
                         <div [class.text-truncate]="!isExpanded('quality')" class="service-content">
-                            <p>Eastern Province's most trusted vehicle repair workshop, serving Dammam, Khobar, Hassa, and surrounding areas. We offer comprehensive maintenance services for all vehicle types:</p>
+                            <p>{{ getTranslation('qualityDesc') }}</p>
                             <ul [class.d-none]="!isExpanded('quality')">
-                                <li>Complete diagnostic services</li>
-                                <li>AC repair and maintenance</li>
-                                <li>Computer scanning & programming</li>
-                                <li>Full mechanical services</li>
-                                <li>24-hour service guarantee</li>
+                                <li>{{ getTranslation('diagnosticServices') }}</li>
+                                <li>{{ getTranslation('acRepair') }}</li>
+                                <li>{{ getTranslation('computerScanning') }}</li>
+                                <li>{{ getTranslation('mechanicalServices') }}</li>
+                                <li>{{ getTranslation('serviceGuaranteeFeature') }}</li>
                             </ul>
                         </div>
                         <button (click)="toggleSection('quality')" class="btn btn-link text-primary p-0">
-                            {{ isExpanded('quality') ? 'Read Less' : 'Read More' }}
+                            {{ isExpanded('quality') ? getTranslation('readLess') : getTranslation('readMore') }}
                         </button>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="d-flex bg-light py-5 px-4">
+                <div class="service-box d-flex py-5 px-4">
                     <i class="fa fa-users-cog fa-3x text-primary flex-shrink-0"></i>
                     <div class="ps-4">
-                        <h5 class="mb-3">Expert Technicians</h5>
+                        <h5 class="mb-3">{{ getTranslation('expertTechnicians') }}</h5>
                         <div [class.text-truncate]="!isExpanded('expert')" class="service-content">
-                            <p>Our certified team specializes in all major vehicle brands including Japanese, Korean, Chinese, and Indian manufacturers. Services include:</p>
+                            <p>{{ getTranslation('expertDesc') }}</p>
                             <ul [class.d-none]="!isExpanded('expert')">
-                                <li>Advanced diagnostics</li>
-                                <li>Electrical systems repair</li>
-                                <li>Engine maintenance</li>
-                                <li>Computerized testing</li>
-                                <li>Emergency roadside assistance</li>
+                                <li>{{ getTranslation('advancedDiagnostics') }}</li>
+                                <li>{{ getTranslation('electricalSystems') }}</li>
+                                <li>{{ getTranslation('engineMaintenance') }}</li>
+                                <li>{{ getTranslation('computerizedTesting') }}</li>
+                                <li>{{ getTranslation('roadsideAssistance') }}</li>
                             </ul>
                         </div>
                         <button (click)="toggleSection('expert')" class="btn btn-link text-primary p-0">
-                            {{ isExpanded('expert') ? 'Read Less' : 'Read More' }}
+                            {{ isExpanded('expert') ? getTranslation('readLess') : getTranslation('readMore') }}
                         </button>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="d-flex py-5 px-4">
+                <div class="service-box d-flex py-5 px-4">
                     <i class="fa fa-tools fa-3x text-primary flex-shrink-0"></i>
                     <div class="ps-4">
-                        <h5 class="mb-3">Modern Equipment</h5>
+                        <h5 class="mb-3">{{ getTranslation('modernEquipment') }}</h5>
                         <div [class.text-truncate]="!isExpanded('equipment')" class="service-content">
-                            <p>State-of-the-art diagnostic and repair equipment for precise service delivery. Special features include:</p>
+                            <p>{{ getTranslation('equipmentDesc') }}</p>
                             <ul [class.d-none]="!isExpanded('equipment')">
-                                <li>Latest diagnostic tools</li>
-                                <li>Computerized alignment systems</li>
-                                <li>Advanced AC service equipment</li>
-                                <li>Professional scanning tools</li>
-                                <li>Mobile service units for corporate clients</li>
+                                <li>{{ getTranslation('diagnosticTools') }}</li>
+                                <li>{{ getTranslation('alignmentSystems') }}</li>
+                                <li>{{ getTranslation('acEquipment') }}</li>
+                                <li>{{ getTranslation('scanningTools') }}</li>
+                                <li>{{ getTranslation('mobileUnits') }}</li>
                             </ul>
                         </div>
                         <button (click)="toggleSection('equipment')" class="btn btn-link text-primary p-0">
-                            {{ isExpanded('equipment') ? 'Read Less' : 'Read More' }}
+                            {{ isExpanded('equipment') ? getTranslation('readLess') : getTranslation('readMore') }}
                         </button>
                     </div>
                 </div>
