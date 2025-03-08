@@ -6,6 +6,7 @@ import { CarouselComponent } from '../carousel/carousel.component';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [TopbarComponentComponent, NavbarComponent, FooterComponent, CarouselComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
