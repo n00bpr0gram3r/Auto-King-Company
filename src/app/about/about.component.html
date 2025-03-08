@@ -1,80 +1,101 @@
 <app-topbar-component></app-topbar-component>
 
 <app-navbar></app-navbar>
- 
- <!-- src/app/about/about.component.html -->
-<app-page-header title="About Us" subtitle="Learn more about our company"></app-page-header>
- 
- <!-- About Start -->
- <div class="container-xxl py-5">
+
+<!-- Page Header -->
+<div class="container-fluid page-header mb-5 p-0" style="background-image: url(./assets/img/carousel-bg-1.jpg);">
+    <div class="container-fluid page-header-inner py-5">
+        <div class="container text-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">{{ getTranslation('aboutTitle') }}</h1>
+            <p class="text-white mb-3 animated slideInDown">{{ getTranslation('aboutSubtitle') }}</p>
+        </div>
+    </div>
+</div>
+
+<!-- About Section -->
+<div class="container-xxl py-5">
     <div class="container">
         <div class="row g-5">
+            <!-- Company Image -->
             <div class="col-lg-6 pt-4" style="min-height: 400px;">
                 <div class="position-relative h-100 wow fadeIn" data-wow-delay="0.1s">
-                    <img class="position-absolute img-fluid w-100 h-100" src="./assets/img/about.jpg"
-                        style="object-fit: cover;" alt="">
-                    <!-- <div class="position-absolute top-0 end-0 mt-n4 me-n4 py-4 px-5" style="background: rgba(0, 0, 0, .08);">
-                        <h1 class="display-4 text-white mb-0">15 <span class="fs-4">Years</span></h1>
-                        <h4 class="text-white">Experience</h4>
-                    </div> -->
+                    <img class="position-absolute img-fluid w-100 h-100" src="./assets/img/about.jpg" style="object-fit: cover;" alt="Auto King Company Workshop">
                 </div>
             </div>
+            
+            <!-- Company Information -->
             <div class="col-lg-6">
-                <h6 class="text-primary text-uppercase">// About Us //</h6>
-                <h1 class="mb-4"><span class="text-primary">Auto King Company</span> Is Prompt Perfect Accessible
-                    Affordable All Time & Always</h1>
-                <p class="mb-4"> Auto king company , we don't just provide auto repairs - we forge lasting
-                    relationships based on trust. Our highly
-                    veterans technical squad ranked in the top nationwide, is dedicated to delivering expert service
-                    that ensures
-                    your vehicle's durability, safety and your peace of mind.</p>
-                <div class="row g-4 mb-3 pb-3">
-                    <div class="col-12 wow fadeIn" data-wow-delay="0.1s">
-                        <div class="d-flex">
-                            <div class="bg-light d-flex flex-shrink-0 align-items-center justify-content-center mt-1"
-                                style="width: 45px; height: 45px;">
-                                <span class="fw-bold text-secondary">01</span>
-                            </div>
-                            <div class="ps-3">
-                                <h6>Professional & Expert</h6>
-                                <span>We have team of expert technicians who are well trained and experienced in
-                                    their field.</span>
-                            </div>
-                        </div>
+                <!-- History Section -->
+                <div class="mb-4 wow fadeIn" data-wow-delay="0.3s">
+                    <h2 class="mb-3">{{ getTranslation('ourHistory') }}</h2>
+                    <div [class.text-truncate]="!isExpanded('history')" class="about-content">
+                        <p>{{ getTranslation('historyDesc') }}</p>
                     </div>
-                    <div class="col-12 wow fadeIn" data-wow-delay="0.3s">
-                        <div class="d-flex">
-                            <div class="bg-light d-flex flex-shrink-0 align-items-center justify-content-center mt-1"
-                                style="width: 45px; height: 45px;">
-                                <span class="fw-bold text-secondary">02</span>
-                            </div>
-                            <div class="ps-3">
-                                <h6>Quality Servicing Center</h6>
-                                <span>Our team of expert technicians will provide you with the best quality service
-                                    for your vehicle.</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 wow fadeIn" data-wow-delay="0.5s">
-                        <div class="d-flex">
-                            <div class="bg-light d-flex flex-shrink-0 align-items-center justify-content-center mt-1"
-                                style="width: 45px; height: 45px;">
-                                <span class="fw-bold text-secondary">03</span>
-                            </div>
-                            <div class="ps-3">
-                                <h6>Awards Winning Workers</h6>
-                                <span>Our team of expert technicians have won numerous awards for their exceptional
-                                    work.</span>
-                            </div>
-                        </div>
-                    </div>
+                    <button (click)="toggleSection('history')" class="btn btn-link text-primary p-0">
+                        {{ isExpanded('history') ? getTranslation('readLess') : getTranslation('readMore') }}
+                    </button>
                 </div>
-                <a href="./about.html" class="btn btn-primary py-3 px-5">Read More<i
-                        class="fa fa-arrow-right ms-3"></i></a>
+
+                <!-- Mission Section -->
+                <div class="mb-4 wow fadeIn" data-wow-delay="0.5s">
+                    <h2 class="mb-3">{{ getTranslation('ourMission') }}</h2>
+                    <div [class.text-truncate]="!isExpanded('mission')" class="about-content">
+                        <p>{{ getTranslation('missionDesc') }}</p>
+                    </div>
+                    <button (click)="toggleSection('mission')" class="btn btn-link text-primary p-0">
+                        {{ isExpanded('mission') ? getTranslation('readLess') : getTranslation('readMore') }}
+                    </button>
+                </div>
+
+                <!-- Values Section -->
+                <div class="wow fadeIn" data-wow-delay="0.7s">
+                    <h2 class="mb-3">{{ getTranslation('ourValues') }}</h2>
+                    <div [class.text-truncate]="!isExpanded('values')" class="about-content">
+                        <ul class="list-unstyled">
+                            <li><i class="fa fa-check text-primary me-3"></i>{{ getTranslation('valuesList.quality') }}</li>
+                            <li><i class="fa fa-check text-primary me-3"></i>{{ getTranslation('valuesList.integrity') }}</li>
+                            <li><i class="fa fa-check text-primary me-3"></i>{{ getTranslation('valuesList.innovation') }}</li>
+                            <li><i class="fa fa-check text-primary me-3"></i>{{ getTranslation('valuesList.customer') }}</li>
+                            <li><i class="fa fa-check text-primary me-3"></i>{{ getTranslation('valuesList.reliability') }}</li>
+                        </ul>
+                    </div>
+                    <button (click)="toggleSection('values')" class="btn btn-link text-primary p-0">
+                        {{ isExpanded('values') ? getTranslation('readLess') : getTranslation('readMore') }}
+                    </button>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<!-- About End -->
+
+<!-- Membership Benefits Section -->
+<div class="container-fluid bg-light py-5">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="mb-5">{{ getTranslation('membershipTitle') }}</h2>
+            <p class="mb-4">{{ getTranslation('membershipDesc') }}</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-box text-center p-4">
+                    <i class="fa fa-star fa-3x text-primary mb-4"></i>
+                    <h5 class="mb-3">{{ getTranslation('benefitsList.priority') }}</h5>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-box text-center p-4">
+                    <i class="fa fa-tags fa-3x text-primary mb-4"></i>
+                    <h5 class="mb-3">{{ getTranslation('benefitsList.discounts') }}</h5>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-box text-center p-4">
+                    <i class="fa fa-check-circle fa-3x text-primary mb-4"></i>
+                    <h5 class="mb-3">{{ getTranslation('benefitsList.inspection') }}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <app-footer></app-footer>
