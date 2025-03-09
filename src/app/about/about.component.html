@@ -28,40 +28,30 @@
                 <!-- History Section -->
                 <div class="mb-4 wow fadeIn" data-wow-delay="0.3s">
                     <h2 class="mb-3">{{ getTranslation('ourHistory') }}</h2>
-                    <div [class.text-truncate]="!isExpanded('history')" class="about-content">
+                    <div class="about-content">
                         <p>{{ getTranslation('historyDesc') }}</p>
                     </div>
-                    <button (click)="toggleSection('history')" class="btn btn-link text-primary p-0">
-                        {{ isExpanded('history') ? getTranslation('readLess') : getTranslation('readMore') }}
-                    </button>
                 </div>
 
                 <!-- Mission Section -->
                 <div class="mb-4 wow fadeIn" data-wow-delay="0.5s">
                     <h2 class="mb-3">{{ getTranslation('ourMission') }}</h2>
-                    <div [class.text-truncate]="!isExpanded('mission')" class="about-content">
+                    <div class="about-content">
                         <p>{{ getTranslation('missionDesc') }}</p>
                     </div>
-                    <button (click)="toggleSection('mission')" class="btn btn-link text-primary p-0">
-                        {{ isExpanded('mission') ? getTranslation('readLess') : getTranslation('readMore') }}
-                    </button>
                 </div>
 
                 <!-- Values Section -->
                 <div class="wow fadeIn" data-wow-delay="0.7s">
                     <h2 class="mb-3">{{ getTranslation('ourValues') }}</h2>
-                    <div [class.text-truncate]="!isExpanded('values')" class="about-content">
+                    <div class="about-content">
                         <ul class="list-unstyled">
-                            <li><i class="fa fa-check text-primary me-3"></i>{{ getTranslation('valuesList.quality') }}</li>
-                            <li><i class="fa fa-check text-primary me-3"></i>{{ getTranslation('valuesList.integrity') }}</li>
-                            <li><i class="fa fa-check text-primary me-3"></i>{{ getTranslation('valuesList.innovation') }}</li>
-                            <li><i class="fa fa-check text-primary me-3"></i>{{ getTranslation('valuesList.customer') }}</li>
-                            <li><i class="fa fa-check text-primary me-3"></i>{{ getTranslation('valuesList.reliability') }}</li>
+                            <li *ngFor="let value of values">
+                                <i class="fa {{ value.icon }} text-primary me-3"></i>
+                                {{ value.title }}
+                            </li>
                         </ul>
                     </div>
-                    <button (click)="toggleSection('values')" class="btn btn-link text-primary p-0">
-                        {{ isExpanded('values') ? getTranslation('readLess') : getTranslation('readMore') }}
-                    </button>
                 </div>
             </div>
         </div>
@@ -76,22 +66,10 @@
             <p class="mb-4">{{ getTranslation('membershipDesc') }}</p>
         </div>
         <div class="row g-4 justify-content-center">
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+            <div *ngFor="let benefit of benefits" class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="service-box text-center p-4">
-                    <i class="fa fa-star fa-3x text-primary mb-4"></i>
-                    <h5 class="mb-3">{{ getTranslation('benefitsList.priority') }}</h5>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
-                <div class="service-box text-center p-4">
-                    <i class="fa fa-tags fa-3x text-primary mb-4"></i>
-                    <h5 class="mb-3">{{ getTranslation('benefitsList.discounts') }}</h5>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
-                <div class="service-box text-center p-4">
-                    <i class="fa fa-check-circle fa-3x text-primary mb-4"></i>
-                    <h5 class="mb-3">{{ getTranslation('benefitsList.inspection') }}</h5>
+                    <i class="fa {{ benefit.icon }} fa-3x text-primary mb-4"></i>
+                    <h5 class="mb-3">{{ benefit.title }}</h5>
                 </div>
             </div>
         </div>

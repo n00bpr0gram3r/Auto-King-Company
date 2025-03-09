@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageService, Language } from '../../services/language.service';
 
@@ -27,13 +27,16 @@ import { LanguageService, Language } from '../../services/language.service';
       display: flex;
       gap: 0.5rem;
       align-items: center;
+      margin: 0 1rem;
     }
     .btn {
-      padding: 0.25rem 0.5rem;
+      padding: 0.25rem 0.75rem;
       border: 1px solid var(--primary);
       background: transparent;
       color: var(--primary);
       transition: all 0.3s ease;
+      font-size: 0.875rem;
+      border-radius: 4px;
     }
     .btn.active {
       background: var(--primary);
@@ -43,14 +46,17 @@ import { LanguageService, Language } from '../../services/language.service';
       background: var(--primary);
       color: white;
     }
+    @media (max-width: 768px) {
+      .language-toggle {
+        margin: 0.5rem 0;
+      }
+    }
   `]
 })
-export class LanguageToggleComponent implements OnInit {
+export class LanguageToggleComponent {
   currentLang: Language = 'en';
 
-  constructor(private languageService: LanguageService) {}
-
-  ngOnInit() {
+  constructor(private languageService: LanguageService) {
     this.languageService.language$.subscribe(lang => {
       this.currentLang = lang;
     });

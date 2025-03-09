@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { LanguageToggleComponent } from '../components/language-toggle/language-toggle.component';
 
 @Component({
   selector: 'app-topbar-component',
   standalone: true,
-  imports: [],
+  imports: [ LanguageToggleComponent],
   templateUrl: './topbar-component.component.html',
   styleUrl: './topbar-component.component.css'
 })
-export class TopbarComponentComponent {
-
-}
+export class TopbarComponentComponent {}

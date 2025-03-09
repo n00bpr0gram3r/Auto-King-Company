@@ -18,7 +18,7 @@
                                 </a>
                             </div>
                             <div class="col-lg-5 d-none d-lg-flex animated zoomIn">
-                                <img class="img-fluid" src="./assets/img/carousel-1.png" alt="Professional Auto Service">
+                                <img class="img-fluid" src="./assets/img/carousel-1.png" alt="Professional Auto Service in Eastern Province">
                             </div>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                                 </a>
                             </div>
                             <div class="col-lg-5 d-none d-lg-flex animated zoomIn">
-                                <img class="img-fluid" src="./assets/img/carousel-2.png" alt="Premium Auto Maintenance">
+                                <img class="img-fluid" src="./assets/img/carousel-2.png" alt="Premium Auto Maintenance Services">
                             </div>
                         </div>
                     </div>
@@ -67,14 +67,14 @@
                     <i class="fa fa-certificate fa-3x text-primary flex-shrink-0"></i>
                     <div class="ps-4">
                         <h5 class="mb-3">{{ getTranslation('qualityServicing') }}</h5>
+                        <p class="mb-4">{{ getTranslation('qualityDesc') }}</p>
                         <div [class.text-truncate]="!isExpanded('quality')" class="service-content">
-                            <p>{{ getTranslation('qualityDesc') }}</p>
                             <ul [class.d-none]="!isExpanded('quality')">
-                                <li>{{ getTranslation('diagnosticServices') }}</li>
-                                <li>{{ getTranslation('acRepair') }}</li>
-                                <li>{{ getTranslation('computerScanning') }}</li>
-                                <li>{{ getTranslation('mechanicalServices') }}</li>
-                                <li>{{ getTranslation('serviceGuaranteeFeature') }}</li>
+                                <li *ngFor="let service of qualityServices">
+                                    <i class="fa {{ service.icon }} text-primary me-2"></i>
+                                    <strong>{{ service.title }}</strong>
+                                    <p class="ms-4 mb-2">{{ service.description }}</p>
+                                </li>
                             </ul>
                         </div>
                         <button (click)="toggleSection('quality')" class="btn btn-link text-primary p-0">
@@ -88,14 +88,14 @@
                     <i class="fa fa-users-cog fa-3x text-primary flex-shrink-0"></i>
                     <div class="ps-4">
                         <h5 class="mb-3">{{ getTranslation('expertTechnicians') }}</h5>
+                        <p class="mb-4">{{ getTranslation('expertDesc') }}</p>
                         <div [class.text-truncate]="!isExpanded('expert')" class="service-content">
-                            <p>{{ getTranslation('expertDesc') }}</p>
                             <ul [class.d-none]="!isExpanded('expert')">
-                                <li>{{ getTranslation('advancedDiagnostics') }}</li>
-                                <li>{{ getTranslation('electricalSystems') }}</li>
-                                <li>{{ getTranslation('engineMaintenance') }}</li>
-                                <li>{{ getTranslation('computerizedTesting') }}</li>
-                                <li>{{ getTranslation('roadsideAssistance') }}</li>
+                                <li *ngFor="let service of expertServices">
+                                    <i class="fa {{ service.icon }} text-primary me-2"></i>
+                                    <strong>{{ service.title }}</strong>
+                                    <p class="ms-4 mb-2">{{ service.description }}</p>
+                                </li>
                             </ul>
                         </div>
                         <button (click)="toggleSection('expert')" class="btn btn-link text-primary p-0">
@@ -109,14 +109,14 @@
                     <i class="fa fa-tools fa-3x text-primary flex-shrink-0"></i>
                     <div class="ps-4">
                         <h5 class="mb-3">{{ getTranslation('modernEquipment') }}</h5>
+                        <p class="mb-4">{{ getTranslation('equipmentDesc') }}</p>
                         <div [class.text-truncate]="!isExpanded('equipment')" class="service-content">
-                            <p>{{ getTranslation('equipmentDesc') }}</p>
                             <ul [class.d-none]="!isExpanded('equipment')">
-                                <li>{{ getTranslation('diagnosticTools') }}</li>
-                                <li>{{ getTranslation('alignmentSystems') }}</li>
-                                <li>{{ getTranslation('acEquipment') }}</li>
-                                <li>{{ getTranslation('scanningTools') }}</li>
-                                <li>{{ getTranslation('mobileUnits') }}</li>
+                                <li *ngFor="let feature of equipmentFeatures">
+                                    <i class="fa {{ feature.icon }} text-primary me-2"></i>
+                                    <strong>{{ feature.title }}</strong>
+                                    <p class="ms-4 mb-2">{{ feature.description }}</p>
+                                </li>
                             </ul>
                         </div>
                         <button (click)="toggleSection('equipment')" class="btn btn-link text-primary p-0">
