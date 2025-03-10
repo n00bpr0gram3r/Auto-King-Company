@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } 
 import { TranslationService } from '../../services/translation.service';
 
 @Component({
-  selector: 'app-booking',
+  selector: 'app-booking-special',
   standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
   template: `
@@ -22,8 +22,8 @@ import { TranslationService } from '../../services/translation.service';
                   <div class="d-flex align-items-center">
                     <i class="fa" [class]="feature.icon + ' fa-2x text-primary me-3'"></i>
                     <div>
-                      <h5 class="text-white">{{ feature.title }}</h5>
-                      <p class="text-white mb-0">{{ feature.description }}</p>
+                      <h5 class="text-white">{{ getTranslation(feature.titleKey) }}</h5>
+                      <p class="text-white mb-0">{{ getTranslation(feature.descriptionKey) }}</p>
                     </div>
                   </div>
                 </div>
@@ -43,6 +43,9 @@ import { TranslationService } from '../../services/translation.service';
                       formControlName="name"
                       [class.is-invalid]="isFieldInvalid('name')"
                     >
+                    <div *ngIf="isFieldInvalid('name')" class="invalid-feedback">
+                      {{ getTranslation('errors.required') }}
+                    </div>
                   </div>
                   <div class="col-12 col-sm-6">
                     <input 
@@ -52,6 +55,9 @@ import { TranslationService } from '../../services/translation.service';
                       formControlName="email"
                       [class.is-invalid]="isFieldInvalid('email')"
                     >
+                    <div *ngIf="isFieldInvalid('email')" class="invalid-feedback">
+                      {{ getTranslation('errors.email') }}
+                    </div>
                   </div>
                   <div class="col-12 col-sm-6">
                     <input 
@@ -61,6 +67,9 @@ import { TranslationService } from '../../services/translation.service';
                       formControlName="phone"
                       [class.is-invalid]="isFieldInvalid('phone')"
                     >
+                    <div *ngIf="isFieldInvalid('phone')" class="invalid-feedback">
+                      {{ getTranslation('errors.phone') }}
+                    </div>
                   </div>
                   <div class="col-12 col-sm-6">
                     <select 
@@ -70,9 +79,12 @@ import { TranslationService } from '../../services/translation.service';
                     >
                       <option value="">{{ getTranslation('booking.form.selectService') }}</option>
                       <option *ngFor="let service of services" [value]="service.value">
-                        {{ service.label }}
+                        {{ getTranslation(service.labelKey) }}
                       </option>
                     </select>
+                    <div *ngIf="isFieldInvalid('service')" class="invalid-feedback">
+                      {{ getTranslation('errors.required') }}
+                    </div>
                   </div>
                   <div class="col-12 col-sm-6">
                     <input 
@@ -81,6 +93,9 @@ import { TranslationService } from '../../services/translation.service';
                       formControlName="date"
                       [class.is-invalid]="isFieldInvalid('date')"
                     >
+                    <div *ngIf="isFieldInvalid('date')" class="invalid-feedback">
+                      {{ getTranslation('errors.invalidDate') }}
+                    </div>
                   </div>
                   <div class="col-12 col-sm-6">
                     <select 
@@ -90,9 +105,12 @@ import { TranslationService } from '../../services/translation.service';
                     >
                       <option value="">{{ getTranslation('booking.form.selectTime') }}</option>
                       <option *ngFor="let slot of timeSlots" [value]="slot.value">
-                        {{ slot.label }}
+                        {{ getTranslation(slot.labelKey) }}
                       </option>
                     </select>
+                    <div *ngIf="isFieldInvalid('time')" class="invalid-feedback">
+                      {{ getTranslation('errors.invalidTime') }}
+                    </div>
                   </div>
                   <div class="col-12">
                     <textarea 
@@ -121,7 +139,7 @@ import { TranslationService } from '../../services/translation.service';
   `,
   styles: [`
     .booking {
-      background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(assets/img/carousel-bg-2.jpg) center center no-repeat;
+      background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../../../assets/img/carousel-bg-2.jpg) center center no-repeat;
       background-size: cover;
     }
     
@@ -142,6 +160,13 @@ import { TranslationService } from '../../services/translation.service';
     .is-invalid {
       border-color: #dc3545 !important;
     }
+
+    .invalid-feedback {
+      display: block;
+      color: #dc3545;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
   `]
 })
 export class BookingComponent {
@@ -151,43 +176,64 @@ export class BookingComponent {
   bookingFeatures = [
     {
       icon: 'fa-check-circle',
-      title: 'Professional Service',
-      description: 'Expert technicians and quality service'
+      titleKey: 'booking.features.professional.title',
+      descriptionKey: 'booking.features.professional.description'
     },
     {
       icon: 'fa-clock',
-      title: 'Flexible Schedule',
-      description: 'Choose your preferred service time'
+      titleKey: 'booking.features.schedule.title',
+      descriptionKey: 'booking.features.schedule.description'
     },
     {
       icon: 'fa-tools',
-      title: 'Expert Mechanics',
-      description: 'Skilled team for all car brands'
+      titleKey: 'booking.features.experts.title',
+      descriptionKey: 'booking.features.experts.description'
     },
     {
       icon: 'fa-shield-alt',
-      title: 'Service Warranty',
-      description: 'Guaranteed satisfaction and quality'
+      titleKey: 'booking.features.warranty.title',
+      descriptionKey: 'booking.features.warranty.description'
     }
   ];
 
   services = [
-    { value: 'diagnostic', label: 'Diagnostic Service' },
-    { value: 'ac', label: 'AC Service' },
-    { value: 'mechanical', label: 'Mechanical Repair' },
-    { value: 'electrical', label: 'Electrical Service' },
-    { value: 'computer', label: 'Computer Scanning' }
+    { value: 'diagnostic', labelKey: 'booking.services.diagnostic' },
+    { value: 'ac', labelKey: 'booking.services.ac' },
+    { value: 'mechanical', labelKey: 'booking.services.mechanical' },
+    { value: 'electrical', labelKey: 'booking.services.electrical' },
+    { value: 'computer', labelKey: 'booking.services.computer' },
+    { value: 'gearbox', labelKey: 'booking.services.gearbox' },
+    { value: 'engine', labelKey: 'booking.services.engine' },
+    { value: 'periodic', labelKey: 'booking.services.periodic' },
+    { value: 'fahas', labelKey: 'booking.services.fahas' },
+    { value: 'suspension', labelKey: 'booking.services.suspension' },
+    { value: 'brake', labelKey: 'booking.services.brake' },
+    { value: 'oil', labelKey: 'booking.services.oil' },
+    { value: 'battery', labelKey: 'booking.services.battery' },
+    { value: 'steering', labelKey: 'booking.services.steering' },
+    { value: 'exhaust', labelKey: 'booking.services.exhaust' },
+    { value: 'cooling', labelKey: 'booking.services.cooling' },
+    { value: 'transmission', labelKey: 'booking.services.transmission' },
+    { value: 'alignment', labelKey: 'booking.services.alignment' },
+    { value: 'fuel', labelKey: 'booking.services.fuel' },
+    { value: 'clutch', labelKey: 'booking.services.clutch' },
+    { value: 'radiator', labelKey: 'booking.services.radiator' },
+    { value: 'timing', labelKey: 'booking.services.timing' },
+    { value: 'inspection', labelKey: 'booking.services.inspection' }
   ];
 
   timeSlots = [
-    { value: '09:00', label: '09:00 AM' },
-    { value: '10:00', label: '10:00 AM' },
-    { value: '11:00', label: '11:00 AM' },
-    { value: '12:00', label: '12:00 PM' },
-    { value: '14:00', label: '02:00 PM' },
-    { value: '15:00', label: '03:00 PM' },
-    { value: '16:00', label: '04:00 PM' },
-    { value: '17:00', label: '05:00 PM' }
+    { value: '09:00', labelKey: 'booking.timeSlots.slot_09_00' },
+    { value: '10:00', labelKey: 'booking.timeSlots.slot_10_00' },
+    { value: '11:00', labelKey: 'booking.timeSlots.slot_11_00' },
+    { value: '12:00', labelKey: 'booking.timeSlots.slot_12_00' },
+    { value: '14:00', labelKey: 'booking.timeSlots.slot_14_00' },
+    { value: '15:00', labelKey: 'booking.timeSlots.slot_15_00' },
+    { value: '16:00', labelKey: 'booking.timeSlots.slot_16_00' },
+    { value: '17:00', labelKey: 'booking.timeSlots.slot_17_00' },
+    { value: '18:00', labelKey: 'booking.timeSlots.slot_18_00' },
+    { value: '19:00', labelKey: 'booking.timeSlots.slot_19_00' },
+    { value: '20:00', labelKey: 'booking.timeSlots.slot_20_00' }
   ];
 
   constructor(

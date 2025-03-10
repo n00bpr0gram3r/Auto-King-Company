@@ -16,13 +16,26 @@ export class TranslationService {
       membershipTitle: 'Exclusive Membership Benefits',
       membershipDesc: 'Join our lifetime membership program and enjoy exclusive benefits',
 
+      // Navigation
+      nav: {
+        home: 'Home',
+        about: 'About Us',
+        services: 'Services',
+        booking: 'Book Service',
+        contact: 'Contact Us',
+        getQuote: 'Get Quote',
+        language: 'Language',
+        previous: 'Previous',
+        next: 'Next'
+      },
+
       // Carousel
       premiumServices: 'Premium Auto Services in Dammam',
       expertRepairs: 'Expert Vehicle Repairs & Maintenance',
       trustedCare: 'Your Trusted Auto Care Partner',
       serviceGuarantee: '24-Hour Service Guarantee with Quality Assurance',
 
-      // Carousel Service Descriptions
+      // Service Sections
       qualityServicing: 'Quality Auto Services',
       qualityDesc: 'Auto King Company in Eastern Province is your most trusted vehicle repair workshop, conveniently located in Dammam, Khobar, Hassa, Hubail, Al Rabiyah, and Industrial Areas. We offer complete automotive maintenance services under one roof with premium quality work, prompt delivery, and affordable pricing.',
       
@@ -32,52 +45,8 @@ export class TranslationService {
       modernEquipment: 'State-of-the-Art Equipment',
       equipmentDesc: 'We utilize the latest diagnostic and repair equipment to ensure precise service delivery. Our modern facility is equipped with advanced tools for AC repair, computer scanning, programming, and all mechanical works.',
 
-      // About Page
-      aboutTitle: 'About Auto King Company',
-      aboutSubtitle: 'Your Trusted Auto Service Partner in Eastern Province',
-      ourHistory: 'Our History',
-      historyDesc: 'Auto King Company has been serving the Eastern Province with excellence in automotive care. Located in Ar Rabiyah, Dammam, we\'ve built our reputation on trust, quality, and customer satisfaction.',
-      ourMission: 'Our Mission',
-      missionDesc: 'To provide premium quality auto repair and maintenance services with transparency, reliability, and customer convenience at the forefront of everything we do.',
-      ourValues: 'Our Values',
-
-      // Values
-      values: {
-        quality: 'Quality Excellence in Every Service',
-        integrity: 'Professional Integrity and Transparency',
-        innovation: 'Technical Innovation and Advancement',
-        customer: 'Customer-First Approach',
-        reliability: '24-Hour Service Reliability'
-      },
-
-      // Benefits
-      benefits: {
-        priority: 'Priority Service Access',
-        discounts: 'Exclusive Discounts',
-        inspection: 'Complimentary Inspections',
-        support: '24/7 Support Access',
-        offers: 'Special Seasonal Offers'
-      },
-
-      // Services Section
+      // Service Categories
       services: {
-        ourServices: 'Our Services',
-        exploreServices: 'Explore Our Professional Services',
-        bookNow: 'Book Now',
-        process: {
-          title: 'Working Process',
-          subtitle: 'How We Work',
-          booking: 'Book Appointment',
-          bookingDesc: 'Schedule your service online or call us',
-          dropoff: 'Bring Vehicle',
-          dropoffDesc: 'Drop off your vehicle at our workshop',
-          service: 'Service & Repair',
-          serviceDesc: 'Our experts diagnose and fix issues',
-          completion: 'Ready to Go',
-          completionDesc: 'Collect your serviced vehicle'
-        },
-        
-        // Service Categories
         categories: {
           diagnostic: {
             title: 'Diagnostic Services',
@@ -112,7 +81,72 @@ export class TranslationService {
               'Oil Changes'
             ]
           }
+        },
+        process: {
+          service: '24/7 Service Support',
+          serviceDesc: 'Round-the-clock professional service and support'
         }
+      },
+
+      // Service Details
+      serviceDetails: {
+        diagnostic: {
+          subtitle: 'Advanced Diagnostic Solutions',
+          benefits: [
+            'State-of-the-art diagnostic equipment',
+            'Comprehensive system analysis',
+            'Detailed diagnostic reports',
+            'Expert technical recommendations',
+            'Quality assured repairs'
+          ]
+        },
+        mechanical: {
+          subtitle: 'Professional Mechanical Services',
+          benefits: [
+            'Expert mechanical repairs',
+            'Genuine parts installation',
+            'Complete system overhaul',
+            'Performance optimization',
+            'Quality assurance'
+          ]
+        }
+      },
+
+      // Quote Benefits
+      quoteBenefits: {
+        benefits: {
+          expert: {
+            title: 'Expert Support',
+            description: '24/7 Professional technical support'
+          }
+        }
+      },
+
+      // About Page
+      aboutTitle: 'About Auto King Company',
+      aboutSubtitle: 'Your Trusted Auto Service Partner in Eastern Province',
+      ourHistory: 'Our History',
+      historyDesc: 'Auto King Company has been serving the Eastern Province with excellence in automotive care. Located in Ar Rabiyah, Dammam, we\'ve built our reputation on trust, quality, and customer satisfaction.',
+      ourMission: 'Our Mission',
+      missionDesc: 'To provide premium quality auto repair and maintenance services with transparency, reliability, and customer convenience at the forefront of everything we do.',
+      ourValues: 'Our Values',
+
+      // Values
+      values: {
+        quality: 'Quality Excellence in Every Service',
+        integrity: 'Professional Integrity and Transparency',
+        innovation: 'Technical Innovation and Advancement',
+        customer: 'Customer-First Approach',
+        reliability: '24-Hour Service Reliability'
+      },
+
+      // Benefits
+      benefits: {
+        priority: 'Priority Service Access',
+        discounts: 'Exclusive Discounts',
+        inspection: 'Complimentary Inspections',
+        support: '24/7 Support Access',
+        offers: 'Special Seasonal Offers'
       },
 
       // Booking Section
@@ -120,6 +154,62 @@ export class TranslationService {
         title: 'Book Your Service Appointment',
         description: 'Schedule your car service with our expert team. We offer flexible booking options and convenient time slots.',
         formTitle: 'Make an Appointment',
+        features: {
+          professional: {
+            title: 'Professional Service',
+            description: 'Expert technicians and quality service'
+          },
+          schedule: {
+            title: 'Flexible Schedule',
+            description: 'Choose your preferred service time'
+          },
+          experts: {
+            title: 'Expert Mechanics',
+            description: 'Skilled team for all car brands'
+          },
+          warranty: {
+            title: 'Service Warranty',
+            description: 'Guaranteed satisfaction and quality'
+          }
+        },
+        services: {
+          diagnostic: 'Diagnostic Service',
+          ac: 'AC Service',
+          mechanical: 'Mechanical Repair',
+          electrical: 'Electrical Service',
+          computer: 'Computer Scanning',
+          gearbox: 'Gearbox Service & Repair',
+          engine: 'Engine Overhaul',
+          periodic: 'Periodic Maintenance',
+          fahas: 'FAHAS Inspection Preparation',
+          suspension: 'Suspension System Service',
+          brake: 'Brake System Service',
+          oil: 'Oil Change & Fluids',
+          battery: 'Battery & Electrical Systems',
+          steering: 'Steering System Service',
+          exhaust: 'Exhaust System Repair',
+          cooling: 'Cooling System Service',
+          transmission: 'Transmission Service',
+          alignment: 'Wheel Alignment & Balancing',
+          fuel: 'Fuel System Service',
+          clutch: 'Clutch Repair & Replacement',
+          radiator: 'Radiator Service & Repair',
+          timing: 'Timing Belt Replacement',
+          inspection: 'Pre-Purchase Inspection'
+        },
+        timeSlots: {
+          slot_09_00: '09:00 AM',
+          slot_10_00: '10:00 AM',
+          slot_11_00: '11:00 AM',
+          slot_12_00: '12:00 PM',
+          slot_14_00: '02:00 PM',
+          slot_15_00: '03:00 PM',
+          slot_16_00: '04:00 PM',
+          slot_17_00: '05:00 PM',
+          slot_18_00: '06:00 PM',
+          slot_19_00: '07:00 PM',
+          slot_20_00: '08:00 PM'
+        },
         form: {
           name: 'Your Name',
           email: 'Your Email',
@@ -218,6 +308,100 @@ export class TranslationService {
             ]
           }
         }
+      },
+
+      // Contact Info (Topbar)
+      contact: {
+        openHours: 'Opening Hours',
+        openTime: 'Sun - Thu : 09 AM - 09 PM',
+        phone: 'Call Us',
+        phoneNumber: '+966 XX XXX XXXX',
+        location: 'Our Location',
+        address: 'Al Rabiyah, Dammam, Saudi Arabia'
+      },
+
+      // Footer
+      footer: {
+        quickLinks: 'Quick Links',
+        services: 'Our Services',
+        support: 'Support',
+        address: {
+          title: 'Our Address',
+          line1: 'Auto King Company',
+          line2: 'Al Rabiyah',
+          line3: 'Dammam, Eastern Province',
+          line4: 'Saudi Arabia'
+        },
+        workingHours: {
+          title: 'Working Hours',
+          weekdays: 'Sunday - Thursday',
+          weekdayTiming: '09:00 AM - 09:00 PM',
+          friday: 'Friday',
+          fridayTiming: 'By Appointment Only',
+          saturday: 'Saturday',
+          saturdayTiming: '10:00 AM - 06:00 PM'
+        },
+        social: {
+          title: 'Follow Us',
+          facebook: 'Facebook',
+          twitter: 'Twitter',
+          instagram: 'Instagram',
+          whatsapp: 'WhatsApp'
+        },
+        copyright: '© 2024 Auto King Company. All Rights Reserved.'
+      },
+
+      // Error Messages
+      errors: {
+        required: 'This field is required',
+        email: 'Please enter a valid email address',
+        phone: 'Please enter a valid phone number',
+        minLength: 'Must be at least {0} characters',
+        maxLength: 'Must not exceed {0} characters',
+        invalidDate: 'Please select a valid date',
+        invalidTime: 'Please select a valid time',
+        submitError: 'An error occurred. Please try again.',
+        submitSuccess: 'Submitted successfully!'
+      },
+
+      // Maintenance Tips Additional Content
+      maintenanceTips: {
+        general: {
+          title: 'General Maintenance',
+          description: 'Regular maintenance tips to keep your vehicle in top condition',
+          tips: [
+            'Regular oil changes extend engine life',
+            'Check tire pressure monthly',
+            'Inspect brakes every 10,000 km',
+            'Keep battery terminals clean',
+            'Replace air filters regularly'
+          ]
+        },
+        seasonal: {
+          title: 'Seasonal Care',
+          description: 'Specific maintenance needs for different seasons',
+          tips: [
+            'Prepare for extreme temperatures',
+            'Check cooling system efficiency',
+            'Inspect weather protection',
+            'Monitor fluid levels',
+            'Test battery condition'
+          ]
+        }
+      },
+
+      // Call-to-Action Buttons
+      cta: {
+        bookNow: 'Book Now',
+        getQuote: 'Get Quote',
+        learnMore: 'Learn More',
+        contactUs: 'Contact Us',
+        subscribe: 'Subscribe',
+        viewServices: 'View All Services',
+        readMore: 'Read More',
+        submitForm: 'Submit',
+        callNow: 'Call Now',
+        directions: 'Get Directions'
       }
     },
     ar: {
@@ -229,13 +413,26 @@ export class TranslationService {
       membershipTitle: 'مزايا العضوية الحصرية',
       membershipDesc: 'انضم إلى برنامج العضوية مدى الحياة واستمتع بمزايا حصرية',
 
+      // Navigation
+      nav: {
+        home: 'الرئيسية',
+        about: 'من نحن',
+        services: 'خدماتنا',
+        booking: 'حجز موعد',
+        contact: 'اتصل بنا',
+        getQuote: 'طلب تسعيرة',
+        language: 'اللغة',
+        previous: 'السابق',
+        next: 'التالي'
+      },
+
       // Carousel
       premiumServices: 'خدمات السيارات المتميزة في الدمام',
       expertRepairs: 'إصلاح وصيانة السيارات بخبرة عالية',
       trustedCare: 'شريكك الموثوق في العناية بالسيارات',
       serviceGuarantee: 'ضمان خدمة 24 ساعة مع ضمان الجودة',
 
-      // Carousel Service Descriptions
+      // Service Sections
       qualityServicing: 'خدمات السيارات عالية الجودة',
       qualityDesc: 'شركة أوتو كينج في المنطقة الشرقية هي ورشة إصلاح السيارات الأكثر ثقة، متواجدة في الدمام والخبر والأحساء والجبيل والربيعة والمناطق الصناعية. نقدم خدمات صيانة سيارات متكاملة تحت سقف واحد مع عمل عالي الجودة وتسليم سريع وأسعار معقولة.',
       
@@ -245,52 +442,8 @@ export class TranslationService {
       modernEquipment: 'معدات حديثة ومتطورة',
       equipmentDesc: 'نستخدم أحدث معدات التشخيص والإصلاح لضمان تقديم خدمة دقيقة. منشأتنا الحديثة مجهزة بأدوات متطورة لإصلاح التكييف وفحص الكمبيوتر والبرمجة وجميع الأعمال الميكانيكية.',
 
-      // About Page
-      aboutTitle: 'عن شركة أوتو كينج',
-      aboutSubtitle: 'شريكك الموثوق في خدمة السيارات في المنطقة الشرقية',
-      ourHistory: 'تاريخنا',
-      historyDesc: 'تقدم شركة أوتو كينج خدماتها في المنطقة الشرقية بتميز في العناية بالسيارات. من موقعنا في الربيعة، الدمام، بنينا سمعتنا على الثقة والجودة ورضا العملاء.',
-      ourMission: 'مهمتنا',
-      missionDesc: 'تقديم خدمات إصلاح وصيانة السيارات بجودة عالية مع الشفافية والموثوقية وراحة العملاء في مقدمة كل ما نقوم به.',
-      ourValues: 'قيمنا',
-
-      // Values
-      values: {
-        quality: 'التميز في الجودة في كل خدمة',
-        integrity: 'النزاهة المهنية والشفافية',
-        innovation: 'الابتكار والتقدم التقني',
-        customer: 'العميل أولاً',
-        reliability: 'موثوقية الخدمة على مدار 24 ساعة'
-      },
-
-      // Benefits
-      benefits: {
-        priority: 'أولوية الحصول على الخدمة',
-        discounts: 'خصومات حصرية',
-        inspection: 'فحوصات مجانية',
-        support: 'دعم على مدار 24/7',
-        offers: 'عروض موسمية خاصة'
-      },
-
-      // Services Section
+      // Service Categories
       services: {
-        ourServices: 'خدماتنا',
-        exploreServices: 'استكشف خدماتنا المهنية',
-        bookNow: 'احجز الآن',
-        process: {
-          title: 'آلية العمل',
-          subtitle: 'كيف نعمل',
-          booking: 'حجز موعد',
-          bookingDesc: 'احجز خدمتك عبر الإنترنت أو اتصل بنا',
-          dropoff: 'إحضار السيارة',
-          dropoffDesc: 'أحضر سيارتك إلى ورشتنا',
-          service: 'الخدمة والإصلاح',
-          serviceDesc: 'يقوم خبراؤنا بتشخيص وإصلاح المشاكل',
-          completion: 'جاهز للانطلاق',
-          completionDesc: 'استلم سيارتك بعد الصيانة'
-        },
-        
-        // Service Categories
         categories: {
           diagnostic: {
             title: 'خدمات التشخيص',
@@ -325,7 +478,72 @@ export class TranslationService {
               'تغيير الزيت'
             ]
           }
+        },
+        process: {
+          service: 'دعم على مدار 24/7',
+          serviceDesc: 'خدمة ودعم احترافي على مدار الساعة'
         }
+      },
+
+      // Service Details
+      serviceDetails: {
+        diagnostic: {
+          subtitle: 'حلول تشخيص متقدمة',
+          benefits: [
+            'معدات تشخيص متطورة',
+            'تحليل شامل للنظام',
+            'تقارير تشخيص مفصلة',
+            'توصيات فنية متخصصة',
+            'إصلاحات مضمونة الجودة'
+          ]
+        },
+        mechanical: {
+          subtitle: 'خدمات ميكانيكية احترافية',
+          benefits: [
+            'إصلاحات ميكانيكية متخصصة',
+            'تركيب قطع غيار أصلية',
+            'إصلاح شامل للنظام',
+            'تحسين الأداء',
+            'ضمان الجودة'
+          ]
+        }
+      },
+
+      // Quote Benefits
+      quoteBenefits: {
+        benefits: {
+          expert: {
+            title: 'دعم متخصص',
+            description: 'دعم فني احترافي على مدار 24/7'
+          }
+        }
+      },
+
+      // About Page
+      aboutTitle: 'عن شركة أوتو كينج',
+      aboutSubtitle: 'شريكك الموثوق في خدمة السيارات في المنطقة الشرقية',
+      ourHistory: 'تاريخنا',
+      historyDesc: 'تقدم شركة أوتو كينج خدماتها في المنطقة الشرقية بتميز في العناية بالسيارات. من موقعنا في الربيعة، الدمام، بنينا سمعتنا على الثقة والجودة ورضا العملاء.',
+      ourMission: 'مهمتنا',
+      missionDesc: 'تقديم خدمات إصلاح وصيانة السيارات بجودة عالية مع الشفافية والموثوقية وراحة العملاء في مقدمة كل ما نقوم به.',
+      ourValues: 'قيمنا',
+
+      // Values
+      values: {
+        quality: 'التميز في الجودة في كل خدمة',
+        integrity: 'النزاهة المهنية والشفافية',
+        innovation: 'الابتكار والتقدم التقني',
+        customer: 'العميل أولاً',
+        reliability: 'موثوقية الخدمة على مدار 24 ساعة'
+      },
+
+      // Benefits
+      benefits: {
+        priority: 'أولوية الحصول على الخدمة',
+        discounts: 'خصومات حصرية',
+        inspection: 'فحوصات مجانية',
+        support: 'دعم على مدار 24/7',
+        offers: 'عروض موسمية خاصة'
       },
 
       // Booking Section
@@ -333,6 +551,62 @@ export class TranslationService {
         title: 'احجز موعد صيانة سيارتك',
         description: 'احجز صيانة سيارتك مع فريقنا المتخصص. نقدم خيارات حجز مرنة ومواعيد مناسبة.',
         formTitle: 'حدد موعداً',
+        features: {
+          professional: {
+            title: 'خدمة احترافية',
+            description: 'فنيون خبراء وخدمة عالية الجودة'
+          },
+          schedule: {
+            title: 'جدول مرن',
+            description: 'اختر وقت الخدمة المناسب لك'
+          },
+          experts: {
+            title: 'ميكانيكيون خبراء',
+            description: 'فريق ماهر لجميع العلامات التجارية للسيارات'
+          },
+          warranty: {
+            title: 'ضمان الخدمة',
+            description: 'ضمان الرضا والجودة'
+          }
+        },
+        services: {
+          diagnostic: 'خدمة التشخيص',
+          ac: 'خدمة التكييف',
+          mechanical: 'إصلاح ميكانيكي',
+          electrical: 'خدمة كهربائية',
+          computer: 'فحص الكمبيوتر',
+          gearbox: 'خدمة وإصلاح صندوق التروس',
+          engine: 'إصلاح المحرك',
+          periodic: 'الصيانة الدورية',
+          fahas: 'تحضير فحص الفاحص',
+          suspension: 'خدمة نظام التعليق',
+          brake: 'خدمة نظام الفرامل',
+          oil: 'تغيير الزيت والسوائل',
+          battery: 'البطارية والأنظمة الكهربائية',
+          steering: 'خدمة نظام التوجيه',
+          exhaust: 'إصلاح نظام العادم',
+          cooling: 'خدمة نظام التبريد',
+          transmission: 'خدمة ناقل الحركة',
+          alignment: 'ضبط وموازنة العجلات',
+          fuel: 'خدمة نظام الوقود',
+          clutch: 'إصلاح واستبدال الدبرياج',
+          radiator: 'خدمة وإصلاح الرادياتير',
+          timing: 'استبدال سير التوقيت',
+          inspection: 'فحص ما قبل الشراء'
+        },
+        timeSlots: {
+          slot_09_00: '٩:٠٠ ص',
+          slot_10_00: '١٠:٠٠ ص',
+          slot_11_00: '١١:٠٠ ص',
+          slot_12_00: '١٢:٠٠ م',
+          slot_14_00: '٢:٠٠ م',
+          slot_15_00: '٣:٠٠ م',
+          slot_16_00: '٤:٠٠ م',
+          slot_17_00: '٥:٠٠ م',
+          slot_18_00: '٦:٠٠ م',
+          slot_19_00: '٧:٠٠ م',
+          slot_20_00: '٨:٠٠ م'
+        },
         form: {
           name: 'الاسم',
           email: 'البريد الإلكتروني',
@@ -431,6 +705,100 @@ export class TranslationService {
             ]
           }
         }
+      },
+
+      // Contact Info (Topbar)
+      contact: {
+        openHours: 'ساعات العمل',
+        openTime: 'الأحد - الخميس : ٩ ص - ٩ م',
+        phone: 'اتصل بنا',
+        phoneNumber: '+966 XX XXX XXXX',
+        location: 'موقعنا',
+        address: 'الربيعة، الدمام، المملكة العربية السعودية'
+      },
+
+      // Footer
+      footer: {
+        quickLinks: 'روابط سريعة',
+        services: 'خدماتنا',
+        support: 'الدعم',
+        address: {
+          title: 'عنواننا',
+          line1: 'شركة أوتو كينج',
+          line2: 'الربيعة',
+          line3: 'الدمام، المنطقة الشرقية',
+          line4: 'المملكة العربية السعودية'
+        },
+        workingHours: {
+          title: 'ساعات العمل',
+          weekdays: 'الأحد - الخميس',
+          weekdayTiming: '٩:٠٠ ص - ٩:٠٠ م',
+          friday: 'الجمعة',
+          fridayTiming: 'بموعد مسبق فقط',
+          saturday: 'السبت',
+          saturdayTiming: '١٠:٠٠ ص - ٦:٠٠ م'
+        },
+        social: {
+          title: 'تابعنا',
+          facebook: 'فيسبوك',
+          twitter: 'تويتر',
+          instagram: 'انستغرام',
+          whatsapp: 'واتساب'
+        },
+        copyright: '© ٢٠٢٤ شركة أوتو كينج. جميع الحقوق محفوظة.'
+      },
+
+      // Error Messages
+      errors: {
+        required: 'هذا الحقل مطلوب',
+        email: 'يرجى إدخال بريد إلكتروني صحيح',
+        phone: 'يرجى إدخال رقم هاتف صحيح',
+        minLength: 'يجب أن يكون على الأقل {0} أحرف',
+        maxLength: 'يجب ألا يتجاوز {0} حرف',
+        invalidDate: 'يرجى اختيار تاريخ صحيح',
+        invalidTime: 'يرجى اختيار وقت صحيح',
+        submitError: 'حدث خطأ. يرجى المحاولة مرة أخرى.',
+        submitSuccess: 'تم الإرسال بنجاح!'
+      },
+
+      // Maintenance Tips Additional Content
+      maintenanceTips: {
+        general: {
+          title: 'الصيانة العامة',
+          description: 'نصائح صيانة منتظمة للحفاظ على سيارتك في حالة ممتازة',
+          tips: [
+            'تغيير الزيت المنتظم يطيل عمر المحرك',
+            'فحص ضغط الإطارات شهرياً',
+            'فحص الفرامل كل ١٠,٠٠٠ كم',
+            'الحفاظ على نظافة أقطاب البطارية',
+            'استبدال فلاتر الهواء بانتظام'
+          ]
+        },
+        seasonal: {
+          title: 'العناية الموسمية',
+          description: 'احتياجات صيانة خاصة للمواسم المختلفة',
+          tips: [
+            'الاستعداد لدرجات الحرارة القصوى',
+            'فحص كفاءة نظام التبريد',
+            'فحص الحماية من الطقس',
+            'مراقبة مستويات السوائل',
+            'اختبار حالة البطارية'
+          ]
+        }
+      },
+
+      // Call-to-Action Buttons
+      cta: {
+        bookNow: 'احجز الآن',
+        getQuote: 'احصل على تسعيرة',
+        learnMore: 'اعرف المزيد',
+        contactUs: 'اتصل بنا',
+        subscribe: 'اشترك',
+        viewServices: 'عرض جميع الخدمات',
+        readMore: 'اقرأ المزيد',
+        submitForm: 'إرسال',
+        callNow: 'اتصل الآن',
+        directions: 'احصل على الاتجاهات'
       }
     }
   };

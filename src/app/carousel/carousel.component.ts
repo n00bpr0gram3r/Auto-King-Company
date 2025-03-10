@@ -36,28 +36,28 @@ export class CarouselComponent implements OnInit {
     this.qualityServices = [
       { 
         icon: 'fa-tools', 
-        title: this.translationService.getTranslation('services.diagnostic'),
-        description: 'Advanced computerized diagnostics for accurate problem identification'
+        title: this.getTranslation('services.categories.diagnostic.title'),
+        description: this.getTranslation('services.categories.diagnostic.description')
       },
       { 
         icon: 'fa-snowflake', 
-        title: this.translationService.getTranslation('services.ac'),
-        description: 'Complete AC system repair, recharge, and maintenance services'
+        title: this.getTranslation('services.categories.ac.title'),
+        description: this.getTranslation('services.categories.ac.description')
       },
       { 
         icon: 'fa-laptop', 
-        title: this.translationService.getTranslation('services.computer'),
-        description: 'Professional ECU programming and system diagnostics'
+        title: this.getTranslation('serviceDetails.diagnostic.subtitle'),
+        description: this.getTranslation('serviceDetails.diagnostic.benefits.0')
       },
       { 
         icon: 'fa-cogs', 
-        title: this.translationService.getTranslation('services.mechanical'),
-        description: 'Comprehensive mechanical repairs and maintenance'
+        title: this.getTranslation('services.categories.mechanical.title'),
+        description: this.getTranslation('services.categories.mechanical.description')
       },
       { 
         icon: 'fa-truck', 
-        title: this.translationService.getTranslation('services.emergency'),
-        description: 'Round-the-clock emergency roadside assistance'
+        title: this.getTranslation('services.process.service'),
+        description: this.getTranslation('services.process.serviceDesc')
       }
     ];
 
@@ -65,28 +65,28 @@ export class CarouselComponent implements OnInit {
     this.expertServices = [
       { 
         icon: 'fa-search', 
-        title: 'Engine Diagnostics',
-        description: 'Expert engine performance analysis and troubleshooting'
+        title: this.getTranslation('serviceDetails.diagnostic.subtitle'),
+        description: this.getTranslation('serviceDetails.diagnostic.benefits.0')
       },
       { 
         icon: 'fa-bolt', 
-        title: 'Electrical Systems',
-        description: 'Complete electrical system diagnosis and repair'
+        title: this.getTranslation('serviceDetails.mechanical.subtitle'),
+        description: this.getTranslation('serviceDetails.mechanical.benefits.0')
       },
       { 
         icon: 'fa-microchip', 
-        title: 'Software Updates',
-        description: 'Latest vehicle software updates and programming'
+        title: this.getTranslation('serviceDetails.diagnostic.benefits.2'),
+        description: this.getTranslation('serviceDetails.diagnostic.benefits.3')
       },
       { 
         icon: 'fa-wrench', 
-        title: 'Transmission Service',
-        description: 'Professional transmission repair and maintenance'
+        title: this.getTranslation('services.categories.mechanical.title'),
+        description: this.getTranslation('services.categories.mechanical.features.1')
       },
       { 
         icon: 'fa-ambulance', 
-        title: 'Quick Response',
-        description: 'Fast and reliable emergency repair service'
+        title: this.getTranslation('services.process.service'),
+        description: this.getTranslation('services.process.serviceDesc')
       }
     ];
 
@@ -94,28 +94,28 @@ export class CarouselComponent implements OnInit {
     this.equipmentFeatures = [
       { 
         icon: 'fa-tools', 
-        title: 'Diagnostic Equipment',
-        description: 'State-of-the-art diagnostic tools and scanners'
+        title: this.getTranslation('serviceDetails.diagnostic.subtitle'),
+        description: this.getTranslation('serviceDetails.diagnostic.benefits.1')
       },
       { 
         icon: 'fa-desktop', 
-        title: 'Computer Systems',
-        description: 'Advanced computer systems for precise diagnostics'
+        title: this.getTranslation('serviceDetails.diagnostic.benefits.2'),
+        description: this.getTranslation('serviceDetails.diagnostic.benefits.3')
       },
       { 
         icon: 'fa-thermometer-half', 
-        title: 'AC Service Station',
-        description: 'Modern AC service and repair equipment'
+        title: this.getTranslation('services.categories.ac.title'),
+        description: this.getTranslation('services.categories.ac.features.0')
       },
       { 
         icon: 'fa-car', 
-        title: 'Alignment System',
-        description: '3D wheel alignment and balancing system'
+        title: this.getTranslation('services.categories.mechanical.title'),
+        description: this.getTranslation('services.categories.mechanical.features.3')
       },
       { 
         icon: 'fa-phone', 
-        title: 'Service Support',
-        description: '24/7 customer support and service tracking'
+        title: this.getTranslation('quote.benefits.expert.title'),
+        description: this.getTranslation('quote.benefits.expert.description')
       }
     ];
   }

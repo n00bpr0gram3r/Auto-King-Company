@@ -333,3 +333,128 @@
         /* Smaller size for mobile */
     }
 }
+
+/* RTL Support */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .fa-arrow-right {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .ms-1,
+[dir="rtl"] .ms-2,
+[dir="rtl"] .ms-3,
+[dir="rtl"] .ms-4,
+[dir="rtl"] .ms-5 {
+  margin-right: 0.25rem !important;
+  margin-left: 0 !important;
+}
+
+[dir="rtl"] .me-1,
+[dir="rtl"] .me-2,
+[dir="rtl"] .me-3,
+[dir="rtl"] .me-4,
+[dir="rtl"] .me-5 {
+  margin-left: 0.25rem !important;
+  margin-right: 0 !important;
+}
+
+[dir="rtl"] .ps-1,
+[dir="rtl"] .ps-2,
+[dir="rtl"] .ps-3,
+[dir="rtl"] .ps-4,
+[dir="rtl"] .ps-5 {
+  padding-right: 0.25rem !important;
+  padding-left: 0 !important;
+}
+
+[dir="rtl"] .pe-1,
+[dir="rtl"] .pe-2,
+[dir="rtl"] .pe-3,
+[dir="rtl"] .pe-4,
+[dir="rtl"] .pe-5 {
+  padding-left: 0.25rem !important;
+  padding-right: 0 !important;
+}
+
+[dir="rtl"] .text-start {
+  text-align: right !important;
+}
+
+[dir="rtl"] .text-end {
+  text-align: left !important;
+}
+
+[dir="rtl"] .float-start {
+  float: right !important;
+}
+
+[dir="rtl"] .float-end {
+  float: left !important;
+}
+
+[dir="rtl"] .navbar-nav {
+  padding-right: 0;
+}
+
+[dir="rtl"] .dropdown-menu {
+  text-align: right;
+}
+
+[dir="rtl"] .input-group > .form-control {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+
+[dir="rtl"] .input-group > .input-group-text {
+  border-radius: 0.25rem 0 0 0.25rem;
+}
+
+/* Language Toggle Specific Styles */
+.language-toggle .flag-icon {
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar-toggler {
+    padding: 0.4rem 0.8rem;
+  }
+
+  .nav-link {
+    padding: 0.5rem 1rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  [dir="rtl"] .navbar-nav {
+    text-align: right;
+  }
+}
+
+/* Improved Accessibility */
+.btn:focus,
+.form-control:focus,
+.nav-link:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* High Contrast Mode Support */
+@media (forced-colors: active) {
+  .btn-primary {
+    border: 2px solid currentColor;
+  }
+  
+  .language-toggle .flag-icon {
+    border: 1px solid currentColor;
+  }
+}

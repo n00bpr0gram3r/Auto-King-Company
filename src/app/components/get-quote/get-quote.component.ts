@@ -2,12 +2,18 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TranslationService } from '../../services/translation.service';
-
+import { PageHeaderComponent } from '../../page-header/page-header.component';
+import { TopbarComponentComponent } from '../../topbar-component/topbar-component.component';
+import { NavbarComponent } from '../../navbar/navbar.component';
+import { FooterComponent } from '../../footer/footer.component';
 @Component({
   selector: 'app-get-quote',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, PageHeaderComponent, TopbarComponentComponent, NavbarComponent, FooterComponent],
   template: `
+  <app-topbar-component></app-topbar-component>
+  <app-navbar></app-navbar>
+  <app-page-header title="Get A Quote" subtitle="Get a quote for your car service"></app-page-header>
     <div class="container-fluid quote my-5 py-5">
       <div class="container py-5">
         <div class="row g-5 align-items-center">
@@ -98,10 +104,11 @@ import { TranslationService } from '../../services/translation.service';
         </div>
       </div>
     </div>
+    <app-footer></app-footer>
   `,
   styles: [`
     .quote {
-      background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(assets/img/carousel-bg-1.jpg) center center no-repeat;
+      background: white;
       background-size: cover;
     }
 
