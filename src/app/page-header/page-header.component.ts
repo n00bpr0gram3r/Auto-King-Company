@@ -1,12 +1,22 @@
 import { Component, Input } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { TranslationService } from '../services/translation.service';
+
 @Component({
   selector: 'app-page-header',
-  imports: [RouterLink],
+  standalone: true,
+  imports: [CommonModule, RouterModule],
   templateUrl: './page-header.component.html',
-  styleUrl: './page-header.component.css'
+  styleUrls: ['./page-header.component.css']
 })
 export class PageHeaderComponent {
-  @Input() title: string = ''; // Input property for dynamic title
-  @Input() subtitle: string = ''; // Input property for dynamic subtitle
+  @Input() title: string = '';
+  @Input() subtitle: string = '';
+
+  constructor(private translationService: TranslationService) {}
+
+  getTranslation(key: string): string {
+    return this.translationService.getTranslation(key);
+  }
 }

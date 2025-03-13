@@ -19,14 +19,12 @@ export class TranslationService {
       // Navigation
       nav: {
         home: 'Home',
-        about: 'About Us',
+        about: 'About',
         services: 'Services',
-        booking: 'Book Service',
-        contact: 'Contact Us',
-        getQuote: 'Get Quote',
-        language: 'Language',
-        previous: 'Previous',
-        next: 'Next'
+        pages: 'Pages',
+        booking: 'Booking',
+        contact: 'Contact',
+        getQuote: 'Get A Quote'
       },
 
       // Carousel
@@ -223,16 +221,17 @@ export class TranslationService {
 
       // Quote Section
       quote: {
-        title: 'Request a Quote',
-        getQuote: 'Get a Free Quote For Your Car Service',
-        description: 'Get an instant quote for your car service needs. Our team will provide you with a detailed estimate based on your vehicle model and service requirements.',
+        title: 'Get A Quote',
+        subtitle: 'Get a quote for your car service',
+        getQuote: 'Get A Quote',
+        description: 'Get a detailed quote for your car service needs',
         form: {
           name: 'Your Name',
           phone: 'Your Phone',
-          carModel: 'Car Model & Year',
+          carModel: 'Car Model',
           selectService: 'Select Service',
-          description: 'Service Description or Special Requirements',
-          submit: 'Get Quote Now'
+          description: 'Service Description',
+          submit: 'Get Quote'
         },
         benefits: {
           fastResponse: {
@@ -243,11 +242,11 @@ export class TranslationService {
             title: 'Competitive Pricing',
             description: 'Best rates in the Eastern Province'
           },
-          transparent: {
+          transparentPricing: {
             title: 'Transparent Pricing',
             description: 'No hidden costs or surprise charges'
           },
-          expert: {
+          expertAssessment: {
             title: 'Expert Assessment',
             description: 'Professional evaluation by certified technicians'
           }
@@ -324,6 +323,7 @@ export class TranslationService {
       footer: {
         quickLinks: 'Quick Links',
         services: 'Our Services',
+        location: 'Ar Rabiyah, Dammam, Saudi Arabia',
         support: 'Support',
         address: {
           title: 'Our Address',
@@ -334,12 +334,10 @@ export class TranslationService {
         },
         workingHours: {
           title: 'Working Hours',
-          weekdays: 'Sunday - Thursday',
-          weekdayTiming: '09:00 AM - 09:00 PM',
+          weekdays: 'Saturday - Thursday',
+          weekdayTiming: '08:00 AM - 08:00 PM',
           friday: 'Friday',
-          fridayTiming: 'By Appointment Only',
-          saturday: 'Saturday',
-          saturdayTiming: '10:00 AM - 06:00 PM'
+          fridayTiming: 'Closed',
         },
         social: {
           title: 'Follow Us',
@@ -402,6 +400,17 @@ export class TranslationService {
         submitForm: 'Submit',
         callNow: 'Call Now',
         directions: 'Get Directions'
+      },
+
+      topbar: {
+        address: 'Auto King Company, Ar Rabiyah, Dammam Saudi Arabia',
+        workingHours: 'Sat - Mon : 08.00 AM - 08.00 PM',
+        phone: '+966-538459995'
+      },
+
+      pageHeader: {
+        home: 'Home',
+        pages: 'Pages'
       }
     },
     ar: {
@@ -418,12 +427,10 @@ export class TranslationService {
         home: 'الرئيسية',
         about: 'من نحن',
         services: 'خدماتنا',
-        booking: 'حجز موعد',
+        pages: 'الصفحات',
+        booking: 'الحجز',
         contact: 'اتصل بنا',
-        getQuote: 'طلب تسعيرة',
-        language: 'اللغة',
-        previous: 'السابق',
-        next: 'التالي'
+        getQuote: 'احصل على عرض سعر'
       },
 
       // Carousel
@@ -620,33 +627,34 @@ export class TranslationService {
 
       // Quote Section
       quote: {
-        title: 'اطلب عرض سعر',
-        getQuote: 'احصل على عرض سعر مجاني لخدمة سيارتك',
-        description: 'احصل على عرض سعر فوري لاحتياجات صيانة سيارتك. سيقدم فريقنا تقديراً مفصلاً بناءً على طراز سيارتك ومتطلبات الخدمة.',
+        title: 'احصل على عرض سعر',
+        subtitle: 'احصل على عرض سعر لخدمة سيارتك',
+        getQuote: 'احصل على عرض سعر',
+        description: 'احصل على عرض سعر مفصل لاحتياجات خدمة سيارتك',
         form: {
-          name: 'الاسم',
-          phone: 'رقم الهاتف',
-          carModel: 'موديل السيارة والسنة',
+          name: 'اسمك',
+          phone: 'رقم هاتفك',
+          carModel: 'موديل السيارة',
           selectService: 'اختر الخدمة',
-          description: 'وصف الخدمة أو المتطلبات الخاصة',
-          submit: 'احصل على عرض السعر الآن'
+          description: 'وصف الخدمة',
+          submit: 'احصل على العرض'
         },
         benefits: {
           fastResponse: {
             title: 'استجابة سريعة',
-            description: 'احصل على عرض السعر خلال 30 دقيقة'
+            description: 'احصل على عرضك خلال ٣٠ دقيقة'
           },
           competitivePricing: {
             title: 'أسعار تنافسية',
             description: 'أفضل الأسعار في المنطقة الشرقية'
           },
-          transparent: {
+          transparentPricing: {
             title: 'أسعار شفافة',
-            description: 'لا تكاليف خفية أو رسوم مفاجئة'
+            description: 'لا توجد تكاليف خفية أو رسوم مفاجئة'
           },
-          expert: {
+          expertAssessment: {
             title: 'تقييم خبير',
-            description: 'تقييم مهني من قبل فنيين معتمدين'
+            description: 'تقييم احترافي من فنيين معتمدين'
           }
         }
       },
@@ -720,6 +728,7 @@ export class TranslationService {
       // Footer
       footer: {
         quickLinks: 'روابط سريعة',
+        location: 'الربيعة، الدمام، المملكة العربية السعودية',
         services: 'خدماتنا',
         support: 'الدعم',
         address: {
@@ -731,12 +740,10 @@ export class TranslationService {
         },
         workingHours: {
           title: 'ساعات العمل',
-          weekdays: 'الأحد - الخميس',
-          weekdayTiming: '٩:٠٠ ص - ٩:٠٠ م',
+          weekdays: 'السبت - الخميس',
+          weekdayTiming: '٨:٠٠ ص - ٨:٠٠ م',
           friday: 'الجمعة',
-          fridayTiming: 'بموعد مسبق فقط',
-          saturday: 'السبت',
-          saturdayTiming: '١٠:٠٠ ص - ٦:٠٠ م'
+          fridayTiming: 'مغلق',
         },
         social: {
           title: 'تابعنا',
@@ -799,6 +806,17 @@ export class TranslationService {
         submitForm: 'إرسال',
         callNow: 'اتصل الآن',
         directions: 'احصل على الاتجاهات'
+      },
+
+      topbar: {
+        address: 'شركة أوتو كينج، الربيعة، الدمام المملكة العربية السعودية',
+        workingHours: 'السبت - الاثنين: ٨:٠٠ صباحاً - ٨:٠٠ مساءً',
+        phone: '+٩٦٦-٥٣٨٤٥٩٩٩٥'
+      },
+
+      pageHeader: {
+        home: 'الرئيسية',
+        pages: 'الصفحات'
       }
     }
   };

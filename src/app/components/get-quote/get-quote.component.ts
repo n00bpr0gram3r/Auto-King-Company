@@ -93,8 +93,8 @@ import { FooterComponent } from '../../footer/footer.component';
                       <span class="fw-bold text-secondary">0{{ benefit.id }}</span>
                     </div>
                     <div class="ps-3">
-                      <h6>{{ benefit.title }}</h6>
-                      <span>{{ benefit.description }}</span>
+                      <h6>{{ getTranslation(benefit.titleKey) }}</h6>
+                      <span>{{ getTranslation(benefit.descriptionKey) }}</span>
                     </div>
                   </div>
                 </div>
@@ -146,23 +146,23 @@ export class GetQuoteComponent {
   quoteBenefits = [
     {
       id: 1,
-      title: 'Fast Response',
-      description: 'Get your quote within 30 minutes'
+      titleKey: 'quote.benefits.fastResponse.title',
+      descriptionKey: 'quote.benefits.fastResponse.description'
     },
     {
       id: 2,
-      title: 'Competitive Pricing',
-      description: 'Best rates in the Eastern Province'
+      titleKey: 'quote.benefits.competitivePricing.title',
+      descriptionKey: 'quote.benefits.competitivePricing.description'
     },
     {
       id: 3,
-      title: 'Transparent Pricing',
-      description: 'No hidden costs or surprise charges'
+      titleKey: 'quote.benefits.transparentPricing.title',
+      descriptionKey: 'quote.benefits.transparentPricing.description'
     },
     {
       id: 4,
-      title: 'Expert Assessment',
-      description: 'Professional evaluation by certified technicians'
+      titleKey: 'quote.benefits.expertAssessment.title',
+      descriptionKey: 'quote.benefits.expertAssessment.description'
     }
   ];
 

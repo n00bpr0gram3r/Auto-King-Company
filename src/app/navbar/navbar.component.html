@@ -7,19 +7,19 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-            <a routerLink="/" routerLinkActive="active" class="nav-item nav-link">Home</a>
-            <a routerLink="/about" routerLinkActive="active" class="nav-item nav-link">About</a>
-            <a routerLink="/services" routerLinkActive="active" class="nav-item nav-link">Services</a>
+            <a routerLink="/" routerLinkActive="active" class="nav-item nav-link">{{ getTranslation('nav.home') }}</a>
+            <a routerLink="/about" routerLinkActive="active" class="nav-item nav-link">{{ getTranslation('nav.about') }}</a>
+            <a routerLink="/services" routerLinkActive="active" class="nav-item nav-link">{{ getTranslation('nav.services') }}</a>
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ getTranslation('nav.pages') }}</a>
                 <div class="dropdown-menu fade-up m-0">
-                    <a routerLink="/booking" class="dropdown-item">Booking</a>
+                    <a routerLink="/booking" class="dropdown-item">{{ getTranslation('nav.booking') }}</a>
                     <!-- <a routerLink="/team" class="dropdown-item">Technicians</a>
                     <a routerLink="/testimonial" class="dropdown-item">Testimonial</a> -->
                 </div>
             </div>
-            <a routerLink="/contact" routerLinkActive="active" class="nav-item nav-link">Contact</a>
+            <a routerLink="/contact" routerLinkActive="active" class="nav-item nav-link">{{ getTranslation('nav.contact') }}</a>
         </div>
-        <a routerLink="/get-quote" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Get A Quote<i class="fa fa-arrow-right ms-3"></i></a>
+        <a routerLink="/get-quote" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">{{ getTranslation('nav.getQuote') }}<i class="fa fa-arrow-right ms-3"></i></a>
     </div>
 </nav>

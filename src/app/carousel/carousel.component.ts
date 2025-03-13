@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslationService } from '../services/translation.service';
 import { ServiceFeature } from '../interfaces/content.interface';
+import { NewsletterComponent } from '../components/newsletter/newsletter.component';
 
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, NewsletterComponent],
   templateUrl: './carousel.component.html',
   styleUrl: './carousel.component.css'
 })
