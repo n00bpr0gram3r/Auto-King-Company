@@ -1,13 +1,14 @@
 {
   "name": "auto-king-company",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:Auto-King-Company": "node dist/auto-king-company/server/server.mjs"
+    "serve:ssr:Auto-King-Company": "node dist/auto-king-company/server/server.mjs",
+    "postinstall": "patch-package"
   },
   "private": true,
   "dependencies": {
@@ -21,13 +22,24 @@
     "@angular/platform-server": "^19.1.0",
     "@angular/router": "^19.1.0",
     "@angular/ssr": "^19.1.8",
+    "bootstrap": "^5.0.0",
     "bootstrap-icons": "^1.11.3",
+    "counterup": "^1.0.2",
     "easing": "^1.2.1",
     "express": "^4.18.2",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.7.1",
-  
+    "jquery.easing": "^1.4.1",
+    "moment": "^2.30.1",
+    "moment-timezone": "^0.5.47",
+    "owl.carousel": "^2.3.4",
+    "patch-package": "^8.0.0",
     "rxjs": "~7.8.0",
-    "tslib": "^2.3.0"
+    "tempusdominus-bootstrap-4": "^5.39.2",
+    "tslib": "^2.3.0",
+    "waypoints": "^4.0.1",
+    "wowjs": "^1.1.3",
+    "zone.js": "~0.15.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.1.8",
