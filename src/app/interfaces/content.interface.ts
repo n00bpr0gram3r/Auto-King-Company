@@ -11,9 +11,10 @@ export interface Benefit {
 }
 
 export interface ServiceFeature {
-    icon: string;
+    icon?: string;
     title: string;
     description: string;
+    features: string[];
 }
 
 export interface ContentLists {

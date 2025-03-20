@@ -1,8 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslationService } from '../services/translation.service';
+import { LanguageService } from '../services/language.service';
 import { ServiceFeature } from '../interfaces/content.interface';
 import { NewsletterComponent } from '../components/newsletter/newsletter.component';
+
+interface CarouselItem {
+  title: string;
+  description: string;
+  image: string;
+}
+
+interface ServiceItem {
+  icon: string;
+  title: string;
+  description: string;
+}
 
 @Component({
   selector: 'app-carousel',
@@ -12,27 +25,53 @@ import { NewsletterComponent } from '../components/newsletter/newsletter.compone
   styleUrl: './carousel.component.css'
 })
 export class CarouselComponent implements OnInit {
+  carouselItems: CarouselItem[] = [];
   expandedSections: { [key: string]: boolean } = {
     'quality': false,
     'expert': false,
     'equipment': false
   };
 
-  translations: any = {};
-  qualityServices: ServiceFeature[] = [];
-  expertServices: ServiceFeature[] = [];
-  equipmentFeatures: ServiceFeature[] = [];
+  qualityServices: ServiceItem[] = [];
+  expertServices: ServiceItem[] = [];
+  equipmentFeatures: ServiceItem[] = [];
 
-  constructor(private translationService: TranslationService) {}
+  constructor(
+    private translationService: TranslationService,
+    private languageService: LanguageService
+  ) {}
 
   ngOnInit() {
-    this.translationService.getCurrentTranslations().subscribe(translations => {
-      this.translations = translations;
-      this.initializeLists();
+    // Subscribe to language changes
+    this.languageService.language$.subscribe(() => {
+      // Update translations when language changes
+      this.updateTranslations();
     });
+
+    // Initial translation update
+    this.updateTranslations();
   }
 
-  private initializeLists() {
+  private updateTranslations() {
+    // Update carousel items
+    this.carouselItems = [
+      {
+        title: this.getTranslation('premiumServices'),
+        description: this.getTranslation('qualityDesc'),
+        image: 'assets/img/carousel-1.jpg'
+      },
+      {
+        title: this.getTranslation('expertRepairs'),
+        description: this.getTranslation('expertDesc'),
+        image: 'assets/img/carousel-2.jpg'
+      },
+      {
+        title: this.getTranslation('trustedCare'),
+        description: this.getTranslation('serviceGuarantee'),
+        image: 'assets/img/carousel-3.jpg'
+      }
+    ];
+    
     // Quality Services - Focus on diagnostic and repair capabilities
     this.qualityServices = [
       { 
@@ -67,27 +106,27 @@ export class CarouselComponent implements OnInit {
       { 
         icon: 'fa-search', 
         title: this.getTranslation('serviceDetails.diagnostic.subtitle'),
-        description: this.getTranslation('serviceDetails.diagnostic.benefits.0')
+        description: ` ${this.getTranslation('serviceDetails.diagnostic.benefits.1')} <br> ${this.getTranslation('serviceDetails.diagnostic.benefits.2')}`
       },
       { 
         icon: 'fa-bolt', 
         title: this.getTranslation('serviceDetails.mechanical.subtitle'),
-        description: this.getTranslation('serviceDetails.mechanical.benefits.0')
+        description: `${this.getTranslation('serviceDetails.mechanical.benefits.0')} <br> ${this.getTranslation('serviceDetails.mechanical.benefits.1')} <br> ${this.getTranslation('serviceDetails.mechanical.benefits.2')}`
       },
       { 
         icon: 'fa-microchip', 
         title: this.getTranslation('serviceDetails.diagnostic.benefits.2'),
-        description: this.getTranslation('serviceDetails.diagnostic.benefits.3')
+        description: ` ${this.getTranslation('serviceDetails.diagnostic.benefits.3')} <br> ${this.getTranslation('serviceDetails.diagnostic.benefits.4')}`
       },
       { 
         icon: 'fa-wrench', 
         title: this.getTranslation('services.categories.mechanical.title'),
-        description: this.getTranslation('services.categories.mechanical.features.1')
+        description: `${this.getTranslation('services.categories.mechanical.features.1')} <br> ${this.getTranslation('services.categories.mechanical.features.2')}`
       },
       { 
         icon: 'fa-ambulance', 
         title: this.getTranslation('services.process.service'),
-        description: this.getTranslation('services.process.serviceDesc')
+        description: `${this.getTranslation('services.process.serviceDesc')}`
       }
     ];
 
@@ -96,28 +135,24 @@ export class CarouselComponent implements OnInit {
       { 
         icon: 'fa-tools', 
         title: this.getTranslation('serviceDetails.diagnostic.subtitle'),
-        description: this.getTranslation('serviceDetails.diagnostic.benefits.1')
+        description: `${this.getTranslation('serviceDetails.diagnostic.benefits.3')} <br> ${this.getTranslation('serviceDetails.diagnostic.benefits.4')}`
       },
       { 
         icon: 'fa-desktop', 
         title: this.getTranslation('serviceDetails.diagnostic.benefits.2'),
-        description: this.getTranslation('serviceDetails.diagnostic.benefits.3')
+        description: `${this.getTranslation('serviceDetails.diagnostic.benefits.3')} <br> ${this.getTranslation('serviceDetails.diagnostic.benefits.4')}`
       },
       { 
         icon: 'fa-thermometer-half', 
         title: this.getTranslation('services.categories.ac.title'),
-        description: this.getTranslation('services.categories.ac.features.0')
+        description: `${this.getTranslation('services.categories.ac.features.0')} <br> ${this.getTranslation('services.categories.ac.features.1')} <br> ${this.getTranslation('services.categories.ac.features.2')} <br> ${this.getTranslation('services.categories.ac.features.3')}`
       },
       { 
         icon: 'fa-car', 
         title: this.getTranslation('services.categories.mechanical.title'),
-        description: this.getTranslation('services.categories.mechanical.features.3')
-      },
-      { 
-        icon: 'fa-phone', 
-        title: this.getTranslation('quote.benefits.expert.title'),
-        description: this.getTranslation('quote.benefits.expert.description')
+        description: ` ${this.getTranslation('services.categories.mechanical.features.3')} <br> ${this.getTranslation('services.categories.mechanical.features.4')}`
       }
+     
     ];
   }
 

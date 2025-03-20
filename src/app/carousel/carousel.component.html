@@ -73,7 +73,7 @@
                                 <li *ngFor="let service of qualityServices">
                                     <i class="fa {{ service.icon }} text-primary me-2"></i>
                                     <strong>{{ service.title }}</strong>
-                                    <p class="ms-4 mb-2">{{ service.description }}</p>
+                                    <p class="ms-4 mb-2" [innerHTML]="service.description"></p>
                                 </li>
                             </ul>
                         </div>
@@ -94,7 +94,7 @@
                                 <li *ngFor="let service of expertServices">
                                     <i class="fa {{ service.icon }} text-primary me-2"></i>
                                     <strong>{{ service.title }}</strong>
-                                    <p class="ms-4 mb-2">{{ service.description }}</p>
+                                    <p class="ms-4 mb-2" [innerHTML]="service.description"></p>
                                 </li>
                             </ul>
                         </div>
@@ -115,7 +115,7 @@
                                 <li *ngFor="let feature of equipmentFeatures">
                                     <i class="fa {{ feature.icon }} text-primary me-2"></i>
                                     <strong>{{ feature.title }}</strong>
-                                    <p class="ms-4 mb-2">{{ feature.description }}</p>
+                                    <p class="ms-4 mb-2" [innerHTML]="feature.description"></p>
                                 </li>
                             </ul>
                         </div>

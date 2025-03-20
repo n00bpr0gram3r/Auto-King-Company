@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { StorageService } from './storage.service';
 
 export type Language = 'en' | 'ar';
 
@@ -7,26 +8,26 @@ export type Language = 'en' | 'ar';
   providedIn: 'root'
 })
 export class LanguageService {
-  private currentLanguage = new BehaviorSubject<Language>('en');
-  language$ = this.currentLanguage.asObservable();
+  private language = new BehaviorSubject<Language>('en');
+  language$ = this.language.asObservable();
 
-  constructor() {
-    // Try to get the language from localStorage
-    const savedLang = localStorage.getItem('preferred_language') as Language;
-    if (savedLang) {
-      this.currentLanguage.next(savedLang);
+  constructor(private storageService: StorageService) {
+    const storedLang = this.storageService.getItem('selectedLanguage') as Language;
+    if (storedLang) {
+      this.language.next(storedLang);
     }
   }
 
   setLanguage(lang: Language) {
-    localStorage.setItem('preferred_language', lang);
-    this.currentLanguage.next(lang);
-    // Update document direction for RTL support
-    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
-    document.documentElement.lang = lang;
+    this.language.next(lang);
+    this.storageService.setItem('selectedLanguage', lang);
   }
 
   getCurrentLanguage(): Language {
-    return this.currentLanguage.value;
+    return this.language.value;
+  }
+
+  isRTL(): boolean {
+    return this.language.value === 'ar';
   }
 } 

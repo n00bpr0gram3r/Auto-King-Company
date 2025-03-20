@@ -5,6 +5,7 @@ import { FooterComponent } from '../footer/footer.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { TopbarComponentComponent } from '../topbar-component/topbar-component.component';
 import { Value, Benefit } from '../interfaces/content.interface';
+import { LanguageService } from '../services/language.service';
 
 @Component({
   selector: 'app-about',
@@ -14,36 +15,72 @@ import { Value, Benefit } from '../interfaces/content.interface';
   styleUrl: './about.component.css'
 })
 export class AboutComponent implements OnInit {
-  translations: any = {};
   values: Value[] = [];
   benefits: Benefit[] = [];
 
-  constructor(private translationService: TranslationService) {}
+  constructor(
+    private translationService: TranslationService,
+    private languageService: LanguageService
+  ) {}
 
   ngOnInit() {
-    this.translationService.getCurrentTranslations().subscribe(translations => {
-      this.translations = translations;
-      this.initializeLists();
+    // Subscribe to language changes
+    this.languageService.language$.subscribe(() => {
+      // Update translations when language changes
+      this.updateTranslations();
     });
+
+    // Initial translation update
+    this.updateTranslations();
   }
 
-  private initializeLists() {
-    // Initialize values list
+  private updateTranslations() {
+    // Update values
     this.values = [
-      { icon: 'fa-check', title: this.translationService.getTranslation('values.quality') },
-      { icon: 'fa-shield-alt', title: this.translationService.getTranslation('values.integrity') },
-      { icon: 'fa-lightbulb', title: this.translationService.getTranslation('values.innovation') },
-      { icon: 'fa-users', title: this.translationService.getTranslation('values.customer') },
-      { icon: 'fa-clock', title: this.translationService.getTranslation('values.reliability') }
+      {
+        title: this.getTranslation('values.quality'),
+        icon: 'fa fa-check-circle'
+      },
+      {
+        title: this.getTranslation('values.integrity'),
+        icon: 'fa fa-shield-alt'
+      },
+      {
+        title: this.getTranslation('values.innovation'),
+        icon: 'fa fa-lightbulb'
+      },
+      {
+        title: this.getTranslation('values.customer'),
+        icon: 'fa fa-users'
+      },
+      {
+        title: this.getTranslation('values.reliability'),
+        icon: 'fa fa-clock'
+      }
     ];
 
-    // Initialize benefits list
+    // Update benefits
     this.benefits = [
-      { icon: 'fa-star', title: this.translationService.getTranslation('benefits.priority') },
-      { icon: 'fa-tags', title: this.translationService.getTranslation('benefits.discounts') },
-      { icon: 'fa-check-circle', title: this.translationService.getTranslation('benefits.inspection') },
-      { icon: 'fa-headset', title: this.translationService.getTranslation('benefits.support') },
-      { icon: 'fa-gift', title: this.translationService.getTranslation('benefits.offers') }
+      {
+        title: this.getTranslation('benefits.priority'),
+        icon: 'fa fa-star'
+      },
+      {
+        title: this.getTranslation('benefits.discounts'),
+        icon: 'fa fa-percentage'
+      },
+      {
+        title: this.getTranslation('benefits.inspection'),
+        icon: 'fa fa-clipboard-check'
+      },
+      {
+        title: this.getTranslation('benefits.support'),
+        icon: 'fa fa-headset'
+      },
+      {
+        title: this.getTranslation('benefits.offers'),
+        icon: 'fa fa-gift'
+      }
     ];
   }
 

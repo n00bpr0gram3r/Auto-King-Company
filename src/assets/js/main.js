@@ -105,6 +105,37 @@
           }
       }
   });
+
+  // Fix for carousel content sections
+  window.addEventListener('DOMContentLoaded', function() {
+      // Initialize Bootstrap components
+      if (typeof bootstrap !== 'undefined') {
+          // Initialize tooltips
+          var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+          tooltipTriggerList.map(function (tooltipTriggerEl) {
+              return new bootstrap.Tooltip(tooltipTriggerEl);
+          });
+
+          // Initialize carousels
+          var carouselList = [].slice.call(document.querySelectorAll('.carousel'));
+          carouselList.map(function (carouselEl) {
+              return new bootstrap.Carousel(carouselEl, {
+                  interval: 5000
+              });
+          });
+      }
+
+      // Initialize toggle buttons for read more/less
+      document.querySelectorAll('.btn-sm.btn-primary').forEach(function(button) {
+          button.addEventListener('click', function() {
+              // Make sure Angular's click handler has priority
+              setTimeout(function() {
+                  // Manually trigger window resize to recalculate layouts
+                  window.dispatchEvent(new Event('resize'));
+              }, 100);
+          });
+      });
+  });
   
 })(jQuery);
 

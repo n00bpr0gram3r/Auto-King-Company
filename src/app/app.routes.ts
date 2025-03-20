@@ -1,16 +1,29 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
-import { ServicesComponent } from './services/services.component';
-import { BookingComponent } from './booking/booking.component';
-import { ContactComponent } from './contact/contact.component';
-import { GetQuoteComponent } from './components/get-quote/get-quote.component';
+
 export const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'services', component: ServicesComponent },
-  { path: 'booking', component: BookingComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'get-quote', component: GetQuoteComponent },
+  { 
+    path: '', 
+    loadComponent: () => import('./home/home.component').then(m => m.HomeComponent)
+  },
+  { 
+    path: 'about', 
+    loadComponent: () => import('./about/about.component').then(m => m.AboutComponent)
+  },
+  { 
+    path: 'services', 
+    loadComponent: () => import('./services/services.component').then(m => m.ServicesComponent)
+  },
+  { 
+    path: 'booking', 
+    loadComponent: () => import('./booking/booking.component').then(m => m.BookingComponent)
+  },
+  { 
+    path: 'contact', 
+    loadComponent: () => import('./contact/contact.component').then(m => m.ContactComponent)
+  },
+  { 
+    path: 'get-quote', 
+    loadComponent: () => import('./components/get-quote/get-quote.component').then(m => m.GetQuoteComponent)
+  },
   { path: '**', redirectTo: '', pathMatch: 'full' }
 ]; 

@@ -1,0 +1,36 @@
+{
+  "name": "Auto King Company",
+  "short_name": "Auto King",
+  "description": "Premier car service and repair in Dammam, Saudi Arabia",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#13c5dd",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/img/auto-king-final-logo.svg",
+      "sizes": "72x72 96x96 128x128 144x144 152x152 192x192 384x384 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "Book Service",
+      "short_name": "Book",
+      "description": "Book a car service appointment",
+      "url": "/booking",
+      "icons": [{ "src": "/assets/img/auto-king-final-logo.svg", "sizes": "96x96" }]
+    },
+    {
+      "name": "Get Quote",
+      "short_name": "Quote",
+      "description": "Get a service quote",
+      "url": "/get-quote",
+      "icons": [{ "src": "/assets/img/auto-king-final-logo.svg", "sizes": "96x96" }]
+    }
+  ]
+} 

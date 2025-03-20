@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LanguageService, Language } from './language.service';
 import { BehaviorSubject } from 'rxjs';
+import { StorageService } from './storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -35,48 +36,48 @@ export class TranslationService {
 
       // Service Sections
       qualityServicing: 'Quality Auto Services',
-      qualityDesc: 'Auto King Company in Eastern Province is your most trusted vehicle repair workshop, conveniently located in Dammam, Khobar, Hassa, Hubail, Al Rabiyah, and Industrial Areas. We offer complete automotive maintenance services under one roof with premium quality work, prompt delivery, and affordable pricing.',
+      qualityDesc: 'Auto King Company, located in Ar Rabiyah, Dammam, is your trusted vehicle repair workshop. We offer comprehensive automotive maintenance services with premium quality work, prompt delivery, and competitive pricing. Our state-of-the-art facility is equipped to handle all your vehicle service needs under one roof.',
       
       expertTechnicians: 'Expert Auto Technicians',
-      expertDesc: 'Our certified team specializes in all popular vehicle brands in Saudi Arabia, including Japanese, Korean, Chinese, and Indian manufacturers. With our highly skilled automobile engineers and technicians, we provide comprehensive diagnostic and repair services.',
+      expertDesc: 'Our certified team of automotive professionals specializes in servicing all major vehicle brands. With years of experience and continuous training, our technicians provide comprehensive diagnostic and repair services using the latest industry standards and best practices.',
       
       modernEquipment: 'State-of-the-Art Equipment',
-      equipmentDesc: 'We utilize the latest diagnostic and repair equipment to ensure precise service delivery. Our modern facility is equipped with advanced tools for AC repair, computer scanning, programming, and all mechanical works.',
+      equipmentDesc: 'Our workshop is equipped with advanced diagnostic and repair equipment to ensure precise service delivery. From computerized diagnostic systems to specialized tools for AC repair, mechanical work, and electrical systems, we have everything needed to maintain and repair your vehicle to the highest standards.',
 
       // Service Categories
       services: {
         categories: {
           diagnostic: {
             title: 'Diagnostic Services',
-            description: 'Complete vehicle diagnostics with advanced computerized systems',
+            description: 'Advanced computerized diagnostics for accurate problem identification',
             features: [
-              'Engine Performance Analysis',
-              'Electronic System Check',
-              'OBD Scanning',
-              'Battery Health Test',
-              'Emission Testing'
+              'Computerized System Analysis',
+              'Performance Diagnostics',
+              'Electronic System Testing',
+              'Battery & Charging System Check',
+              'Emission Control Testing'
             ]
           },
           ac: {
             title: 'AC Services',
-            description: 'Full AC system maintenance and repair services',
+            description: 'Complete AC system maintenance and repair solutions',
             features: [
-              'AC Performance Check',
-              'Gas Recharge',
-              'Compressor Service',
-              'Cooling System Repair',
-              'Temperature Control'
+              'System Performance Analysis',
+              'Refrigerant Level Check',
+              'Compressor & Component Service',
+              'Temperature Control Calibration',
+              'Air Quality Testing'
             ]
           },
           mechanical: {
             title: 'Mechanical Repairs',
-            description: 'Comprehensive mechanical repair and maintenance',
+            description: 'Comprehensive mechanical repair and maintenance services',
             features: [
-              'Engine Overhaul',
-              'Transmission Service',
-              'Brake System',
-              'Suspension Work',
-              'Oil Changes'
+              'Engine & Transmission Service',
+              'Brake System Maintenance',
+              'Suspension & Steering Work',
+              'Oil & Filter Service',
+              'General Mechanical Repairs'
             ]
           }
         },
@@ -821,30 +822,25 @@ export class TranslationService {
     }
   };
 
-  private currentTranslations = new BehaviorSubject<any>(this.translations.en);
-
-  constructor(private languageService: LanguageService) {
-    this.languageService.language$.subscribe(lang => {
-      this.currentTranslations.next(this.translations[lang]);
-    });
+  constructor(
+    private languageService: LanguageService,
+    private storageService: StorageService
+  ) {
+    // Initialize with stored language or default to English
+    const storedLang = this.storageService.getItem('selectedLanguage');
+    if (storedLang) {
+      this.languageService.setLanguage(storedLang as Language);
+    }
   }
 
   getTranslation(key: string): string {
-    const keys = key.split('.');
-    let value = this.currentTranslations.value;
-    
-    for (const k of keys) {
-      if (value && typeof value === 'object' && k in value) {
-        value = value[k];
-      } else {
-        return key;
-      }
-    }
-    
-    return value as string;
+    const currentLang = this.languageService.getCurrentLanguage();
+    return this.getNestedTranslation(this.translations[currentLang], key) || key;
   }
 
-  getCurrentTranslations() {
-    return this.currentTranslations.asObservable();
+  private getNestedTranslation(obj: any, path: string): string {
+    return path.split('.').reduce((prev, curr) => {
+      return prev ? prev[curr] : null;
+    }, obj) || '';
   }
 } 
