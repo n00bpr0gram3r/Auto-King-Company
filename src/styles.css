@@ -385,3 +385,40 @@
   opacity: 0.65;
   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
+
+/* Global Styles for Consistent Spacing */
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid, .container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Remove default margins for all sections */
+section {
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure no extra margin between components */
+.component {
+    margin-bottom: 0;
+}
+
+/* Utility classes for specific spacing adjustments */
+.mt-0 {
+    margin-top: 0 !important;
+}
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+.pt-0 {
+    padding-top: 0 !important;
+}
+.pb-0 {
+    padding-bottom: 0 !important;
+}

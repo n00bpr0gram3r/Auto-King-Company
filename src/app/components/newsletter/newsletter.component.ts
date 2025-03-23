@@ -13,7 +13,7 @@ import { TranslationService } from '../../services/translation.service';
       <div class="container">
         <div class="row g-5">
           <!-- Newsletter Subscription -->
-          <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="col-lg-6 wow fadeInUp newsLetter" data-wow-delay="0.1s">
             <h1 class="mb-4">{{ getTranslation('newsletter.title') }}</h1>
             <p class="mb-4">{{ getTranslation('newsletter.description') }}</p>
             <form [formGroup]="newsletterForm" (ngSubmit)="onSubmit()">
@@ -38,7 +38,7 @@ import { TranslationService } from '../../services/translation.service';
 
           <!-- Seasonal Tips -->
           <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="h-100">
+            <div class="h-100 seasonalTips">
               <h1 class="mb-4">{{ getTranslation('newsletter.seasonalTips.title') }}</h1>
               <div class="accordion" id="seasonalTips">
                 <div *ngFor="let tip of seasonalTips; let i = index" class="accordion-item bg-transparent">
@@ -77,6 +77,12 @@ import { TranslationService } from '../../services/translation.service';
     </div>
   `,
   styles: [`
+    .newsLetter > h1 {
+      color: #D9D9D9;
+    }
+    .seasonalTips > h1 {
+      color: #D9D9D9;
+    }
     .accordion-item {
       border: 1px solid rgba(255, 255, 255, 0.1);
       margin-bottom: 10px;
