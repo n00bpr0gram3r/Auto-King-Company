@@ -46,6 +46,8 @@ export class TranslationService {
 
       // Service Categories
       services: {
+        title: 'Our Premium Services',
+        subtitle: 'We provide a comprehensive range of automotive services with expert technicians and state-of-the-art equipment',
         categories: {
           diagnostic: {
             title: 'Diagnostic Services',
@@ -78,6 +80,42 @@ export class TranslationService {
               'Suspension & Steering Work',
               'Oil & Filter Service',
               'General Mechanical Repairs'
+            ]
+          },
+          electrical: {
+            title: 'Electrical Services',
+            description: 'Our adept auto electricians tackle all electrical needs, from fixing wiring issues to installing the latest tech.',
+            features: [
+              'Electrical Systems Repair',
+              'Computer System Diagnostics',
+              'Battery & Charging System'
+            ]
+          },
+          denting: {
+            title: 'Denting & Painting Work',
+            description: 'Our skilled artisans provide exceptional denting and painting services that restore your vehicle to its former glory.',
+            features: [
+              'Body Dent Repair',
+              'Premium Paint Jobs',
+              'Scratch Removal'
+            ]
+          },
+          oil: {
+            title: 'Oil Changing',
+            description: 'Keep your vehicle running smoothly with our comprehensive oil change and servicing, ensuring your engine remains well-lubricated.',
+            features: [
+              'Quality Oil Products',
+              'Filter Replacement',
+              'Multi-point Inspection'
+            ]
+          },
+          tire: {
+            title: 'Tire Replacement',
+            description: 'Ensure your safety with our professional tire replacement services, providing quick and efficient tire changes.',
+            features: [
+              'Premium Tire Brands',
+              'Wheel Balancing',
+              'Alignment Service'
             ]
           }
         },
@@ -129,6 +167,18 @@ export class TranslationService {
       ourMission: 'Our Mission',
       missionDesc: 'To provide premium quality auto repair and maintenance services with transparency, reliability, and customer convenience at the forefront of everything we do.',
       ourValues: 'Our Values',
+
+      // Why Choose Us Section
+      whyChooseTitle: 'Why Choose Auto King',
+      whyChooseSubtitle: 'What makes us the preferred choice for auto services in the region',
+      expertiseTitle: 'Expert Technicians',
+      expertiseDesc: 'Our certified technicians have years of experience working with all vehicle makes and models.',
+      qualityGuaranteeTitle: 'Quality Guaranteed',
+      qualityGuaranteeDesc: 'We use only high-quality parts and materials, ensuring the longevity of our repairs and services.',
+      timelyTitle: 'Timely Service',
+      timelyDesc: 'We value your time and complete all services and repairs within the promised timeframe.',
+      affordableTitle: 'Affordable Pricing',
+      affordableDesc: 'Our services come at competitive prices with no compromise on quality or performance.',
 
       // Values
       values: {
@@ -452,6 +502,8 @@ export class TranslationService {
 
       // Service Categories
       services: {
+        title: 'خدماتنا المتميزة',
+        subtitle: 'نقدم مجموعة كاملة من خدمات السيارات مع فنيون خبراء ومعدات حديثة ومتطورة',
         categories: {
           diagnostic: {
             title: 'خدمات التشخيص',
@@ -484,6 +536,42 @@ export class TranslationService {
               'نظام الفرامل',
               'أعمال التعليق',
               'تغيير الزيت'
+            ]
+          },
+          electrical: {
+            title: 'خدمات الكهرباء',
+            description: 'خدمات الكهرباء الذكية لدينا تلائم جميع احتياجات الكهرباء، من إصلاح مشاكل الكيبلات إلى تركيب التكنولوجيا الأحدث.',
+            features: [
+              'إصلاح أنظمة الكهرباء',
+              'فحص أنظمة الكمبيوتر',
+              'أنظمة الشحن'
+            ]
+          },
+          denting: {
+            title: 'إصلاح الدرابزين والدهان',
+            description: 'خدمات الفنيين المهرة لإصلاح الدرابزين والدهان المميزة التي تعيد تلك السيارة إلى سنتها السابقة.',
+            features: [
+              'إصلاح الدرابزين',
+              'دهانات عالية الجودة',
+              'إزالة الخدوش'
+            ]
+          },
+          oil: {
+            title: 'تغيير الزيت',
+            description: 'ضمان تشغيل السيارة بمثابة التشغيل المستمر مع خدمات تغيير الزيت والصيانة الشاملة، مضمونة لإبقاء محرك السيارة بلطف التشغيل.',
+            features: [
+              'منتجات زيت عالية الجودة',
+              'استبدال الفلتر',
+              'فحص متعدد النقاط'
+            ]
+          },
+          tire: {
+            title: 'تغيير الإطارات',
+            description: 'ضمان أمان السيارة مع خدمات تغيير الإطارات المهنية التي توفر تغيير إطارات سريع وفعال.',
+            features: [
+              'إطارات عالية الجودة',
+              'توازن العجلات',
+              'خدمة توجيه'
             ]
           }
         },
@@ -535,6 +623,18 @@ export class TranslationService {
       ourMission: 'مهمتنا',
       missionDesc: 'تقديم خدمات إصلاح وصيانة السيارات بجودة عالية مع الشفافية والموثوقية وراحة العملاء في مقدمة كل ما نقوم به.',
       ourValues: 'قيمنا',
+
+      // Why Choose Us Section
+      whyChooseTitle: 'لماذا تختار أوتو كينج',
+      whyChooseSubtitle: 'ما يجعلنا اختيارك الأفضل لخدمات السيارات في المنطقة',
+      expertiseTitle: 'فنيو سيارات خبراء',
+      expertiseDesc: 'يتخصص فريقنا المعتمد في جميع العلامات التجارية الشعبية للسيارات في المملكة العربية السعودية، بما في ذلك اليابانية والكورية والصينية والهندية. مع مهندسي وفنيي السيارات ذوي المهارات العالية، نقدم خدمات تشخيص وإصلاح شاملة.',
+      qualityGuaranteeTitle: 'ضمان الجودة',
+      qualityGuaranteeDesc: 'نستخدم أجود المواد والأجزاء، مضمونة لإبقاء عمر الإصلاحات والخدمات طويل المدى.',
+      timelyTitle: 'خدمة على الوقت',
+      timelyDesc: 'نحرص على عملياتك وإكمال جميع الخدمات والإصلاحات ضمن الموعد المؤكد.',
+      affordableTitle: 'أسعار معقولة',
+      affordableDesc: 'أسعار خدماتنا معقولة مع عدم التخفيف على الجودة أو الأداء.',
 
       // Values
       values: {

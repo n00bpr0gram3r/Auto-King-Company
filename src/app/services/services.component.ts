@@ -3,6 +3,7 @@ import { TopbarComponentComponent } from '../topbar-component/topbar-component.c
 import { NavbarComponent } from '../navbar/navbar.component';
 import { FooterComponent } from '../footer/footer.component';
 import { PageHeaderComponent } from '../page-header/page-header.component';
+import { TranslationService } from '../services/translation.service';
 
 @Component({
   selector: 'app-services',
@@ -17,5 +18,9 @@ import { PageHeaderComponent } from '../page-header/page-header.component';
   styleUrls: ['./services.component.css']
 })
 export class ServicesComponent {
-  constructor() { }
+  constructor(private translationService: TranslationService) { }
+
+  getTranslation(key: string): string {
+    return this.translationService.getTranslation(key);
+  }
 }
