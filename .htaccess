@@ -1,0 +1,32 @@
+# Prevent directory listing
+Options -Indexes
+
+# Protect sensitive files
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Prevent access to config files
+<FilesMatch "^(config\.php|\.htaccess|\.htpasswd|\.ini|\.log|\.sh|\.inc)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Enable CORS for API
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "http://localhost:4200"
+    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With, Accept"
+    Header set Access-Control-Allow-Credentials "true"
+</IfModule>
+
+# Force HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Handle PHP errors
+php_flag display_errors off
+php_value error_reporting E_ALL
+php_value error_log /path/to/error.log 

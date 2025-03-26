@@ -1,0 +1,162 @@
+<app-topbar-component></app-topbar-component>
+
+<app-navbar></app-navbar>
+<app-page-header title="Contact" subtitle="Contact us for any query"></app-page-header>
+
+<!-- Contact Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="text-primary text-uppercase">// Contact Us //</h6>
+            <h1 class="mb-5">Contact For Any Query</h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-12">
+                <div class="row gy-4">
+                    <div class="col-md-4">
+                        <div class="bg-light d-flex flex-column justify-content-center p-4">
+                            <h5 class="text-uppercase">// Booking //</h5>
+                            <p class="m-0"><i class="fa fa-envelope-open text-primary me-2"></i><a
+                                    href="sales@autokingksa.com">sales&#64;autokingksa.com</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="bg-light d-flex flex-column justify-content-center p-4">
+                            <h5 class="text-uppercase">// General //</h5>
+                            <p class="m-0"><i class="fa fa-envelope-open text-primary me-2"></i><a
+                                    href="marketing@autokingksa.com">marketing&#64;autokingksa.com</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="bg-light d-flex flex-column justify-content-center p-4">
+                            <h5 class="text-uppercase">// Technical //</h5>
+                            <p class="m-0"><i class="fa fa-envelope-open text-primary me-2"></i><a
+                                    href="tech@autokingksa.com">tech&#64;autokingksa.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
+                <iframe class="position-relative rounded w-100 h-100"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.7608007127756!2d50.028559275255446!3d26.463438276917856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e49ff0066ec5dbb%3A0x1da0fd116fa2cf1a!2sAuto%20King%20Company!5e0!3m2!1sen!2ssa!4v1739445836669!5m2!1sen!2ssa"
+                    frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
+            </div>
+            <div class="col-md-6">
+                <div class="wow fadeInUp" data-wow-delay="0.2s">
+                    <h1 class="text-white mb-4">{{ getTranslation('booking.formTitle') }}</h1>
+                    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()" class="booking-form">
+                        <div class="row g-3">
+                            <div class="col-12 col-sm-6">
+                                <input 
+                                    type="text" 
+                                    class="form-control border-0" 
+                                    [placeholder]="getTranslation('booking.form.name')"
+                                    formControlName="name"
+                                    [class.is-invalid]="isFieldInvalid('name')"
+                                >
+                                <div *ngIf="isFieldInvalid('name')" class="invalid-feedback">
+                                    {{ getTranslation('errors.required') }}
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input 
+                                    type="email" 
+                                    class="form-control border-0" 
+                                    [placeholder]="getTranslation('booking.form.email')"
+                                    formControlName="email"
+                                    [class.is-invalid]="isFieldInvalid('email')"
+                                >
+                                <div *ngIf="isFieldInvalid('email')" class="invalid-feedback">
+                                    {{ getTranslation('errors.email') }}
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input 
+                                    type="tel" 
+                                    class="form-control border-0" 
+                                    [placeholder]="getTranslation('booking.form.phone')"
+                                    formControlName="phone"
+                                    [class.is-invalid]="isFieldInvalid('phone')"
+                                >
+                                <div *ngIf="isFieldInvalid('phone')" class="invalid-feedback">
+                                    {{ getTranslation('errors.phone') }}
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <select 
+                                    class="form-select border-0" 
+                                    formControlName="service"
+                                    [class.is-invalid]="isFieldInvalid('service')"
+                                >
+                                    <option value="">{{ getTranslation('booking.form.selectService') }}</option>
+                                    <option *ngFor="let service of services" [value]="service.value">
+                                        {{ getTranslation(service.labelKey) }}
+                                    </option>
+                                </select>
+                                <div *ngIf="isFieldInvalid('service')" class="invalid-feedback">
+                                    {{ getTranslation('errors.required') }}
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <input 
+                                    type="date" 
+                                    class="form-control border-0" 
+                                    formControlName="date"
+                                    [class.is-invalid]="isFieldInvalid('date')"
+                                >
+                                <div *ngIf="isFieldInvalid('date')" class="invalid-feedback">
+                                    {{ getTranslation('errors.invalidDate') }}
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <select 
+                                    class="form-select border-0" 
+                                    formControlName="time"
+                                    [class.is-invalid]="isFieldInvalid('time')"
+                                >
+                                    <option value="">{{ getTranslation('booking.form.selectTime') }}</option>
+                                    <option *ngFor="let slot of timeSlots" [value]="slot.value">
+                                        {{ getTranslation(slot.labelKey) }}
+                                    </option>
+                                </select>
+                                <div *ngIf="isFieldInvalid('time')" class="invalid-feedback">
+                                    {{ getTranslation('errors.invalidTime') }}
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <textarea 
+                                    class="form-control border-0" 
+                                    rows="5"
+                                    [placeholder]="getTranslation('booking.form.message')"
+                                    formControlName="message"
+                                ></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button 
+                                    class="btn btn-secondary w-100 py-3" 
+                                    type="submit"
+                                    [disabled]="bookingForm.invalid || isSubmitting"
+                                >
+                                    {{ isSubmitting ? 'Submitting...' : 'Submit Booking' }}
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Success Message -->
+                        <div *ngIf="submitSuccess" class="alert alert-success mt-3">
+                            <i class="fas fa-check-circle"></i> Booking submitted successfully! We'll contact you shortly.
+                        </div>
+
+                        <!-- Error Message -->
+                        <div *ngIf="submitError" class="alert alert-danger mt-3">
+                            <i class="fas fa-exclamation-circle"></i> {{ errorMessage }}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        <!-- Contact End -->
+        <app-footer></app-footer>

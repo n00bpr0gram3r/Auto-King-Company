@@ -1,0 +1,79 @@
+<app-topbar-component></app-topbar-component>
+
+<app-navbar></app-navbar>
+
+<!-- Page Header -->
+<div class="container-fluid page-header mb-5 p-0" style="background-image: url(./assets/img/carousel-bg-1.jpg);">
+    <div class="container-fluid page-header-inner py-5">
+        <div class="container text-center">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">{{ getTranslation('aboutTitle') }}</h1>
+            <p class="text-white mb-3 animated slideInDown">{{ getTranslation('aboutSubtitle') }}</p>
+        </div>
+    </div>
+</div>
+
+<!-- About Section -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Company Image -->
+            <div class="col-lg-6 pt-4" style="min-height: 400px;">
+                <div class="position-relative h-100 wow fadeIn" data-wow-delay="0.1s">
+                    <img class="position-absolute img-fluid w-100 h-100" src="./assets/img/about-1.jpg" style="object-fit: cover;" alt="Auto King Company Workshop">
+                </div>
+            </div>
+            
+            <!-- Company Information -->
+            <div class="col-lg-6">
+                <!-- History Section -->
+                <div class="mb-4 wow fadeIn" data-wow-delay="0.3s">
+                    <h2 class="mb-3">{{ getTranslation('ourHistory') }}</h2>
+                    <div class="about-content">
+                        <p>{{ getTranslation('historyDesc') }}</p>
+                    </div>
+                </div>
+
+                <!-- Mission Section -->
+                <div class="mb-4 wow fadeIn" data-wow-delay="0.5s">
+                    <h2 class="mb-3">{{ getTranslation('ourMission') }}</h2>
+                    <div class="about-content">
+                        <p>{{ getTranslation('missionDesc') }}</p>
+                    </div>
+                </div>
+
+                <!-- Values Section -->
+                <div class="wow fadeIn" data-wow-delay="0.7s">
+                    <h2 class="mb-3">{{ getTranslation('ourValues') }}</h2>
+                    <div class="about-content">
+                        <ul class="list-unstyled">
+                            <li *ngFor="let value of values">
+                                <i class="fa {{ value.icon }} text-primary me-3"></i>
+                                {{ value.title }}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Membership Benefits Section -->
+<div class="container-fluid bg-light py-5">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="mb-5">{{ getTranslation('membershipTitle') }}</h2>
+            <p class="mb-4">{{ getTranslation('membershipDesc') }}</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div *ngFor="let benefit of benefits" class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-box text-center p-4">
+                    <i class="fa {{ benefit.icon }} fa-3x text-primary mb-4"></i>
+                    <h5 class="mb-3">{{ benefit.title }}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>

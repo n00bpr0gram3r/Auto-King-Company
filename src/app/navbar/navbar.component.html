@@ -1,0 +1,35 @@
+<style>
+    .navbar {
+        margin-bottom: 0;
+    }
+    .navbar-nav .nav-item {
+        margin: 0;
+    }
+</style>
+
+<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+    <a routerLink="/" class="navbar-brand d-flex align-items-center ps-2 px-lg-5">
+        <h2 class="m-0 text-primary"><img class="img-fluid logo pe-1" src="./assets/img/auto-king-final-logo.svg">Auto King Company</h2>
+    </a>
+    <button type="button" class="navbar-toggler me-2" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+            <a routerLink="/" routerLinkActive="active" class="nav-item nav-link">{{ getTranslation('nav.home') }}</a>
+            <a routerLink="/about" routerLinkActive="active" class="nav-item nav-link">{{ getTranslation('nav.about') }}</a>
+            <a routerLink="/services" routerLinkActive="active" class="nav-item nav-link">{{ getTranslation('nav.services') }}</a>
+            <div class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">{{ getTranslation('nav.pages') }}</a>
+                <div class="dropdown-menu fade-up m-0">
+                    <a routerLink="/booking" class="dropdown-item">{{ getTranslation('nav.booking') }}</a>
+                    <!-- <a routerLink="/team" class="dropdown-item">Technicians</a>
+                    <a routerLink="/testimonial" class="dropdown-item">Testimonial</a> -->
+                </div>
+            </div>
+            <a routerLink="/contact" routerLinkActive="active" class="nav-item nav-link">{{ getTranslation('nav.contact') }}</a>
+            <app-language-toggle class="d-lg-none"></app-language-toggle>
+        </div>
+        <a routerLink="/get-quote" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">{{ getTranslation('nav.getQuote') }}<i class="fa fa-arrow-right ms-3"></i></a>
+    </div>
+</nav>

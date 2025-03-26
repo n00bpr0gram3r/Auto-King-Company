@@ -1,0 +1,129 @@
+[2025-03-24 21:04:33] WhatsApp notification would be sent:
+Data: New booking received!
+Name: Abdul Basit
+Service: mechanical
+Date: 2025-03-26 16:00
+--------------------------------------------------
+[2025-03-24 21:04:33] Email notification would be sent:
+Data: New booking received from Abdul Basit for mechanical on 2025-03-26 at 16:00
+--------------------------------------------------
+[2025-03-24 21:12:55] WhatsApp notification would be sent:
+Data: New booking received!
+Name: Abdul Basit
+Service: mechanical
+Date: 2025-03-27 17:00
+--------------------------------------------------
+[2025-03-24 21:12:55] Email notification would be sent:
+Data: New booking received from Abdul Basit for mechanical on 2025-03-27 at 17:00
+--------------------------------------------------
+[2025-03-24 21:36:28] WhatsApp notification would be sent:
+Data: New booking received!
+Name: abdul
+Service: computer
+Date: 2025-03-28 16:00
+--------------------------------------------------
+[2025-03-24 21:36:28] Email notification would be sent:
+Data: New booking received from abdul for computer on 2025-03-28 at 16:00
+--------------------------------------------------
+[2025-03-25 10:00:37] WhatsApp notification would be sent:
+Data: New booking received!
+Name: abdul
+Service: computer
+Date: 2025-03-28 15:00
+--------------------------------------------------
+[2025-03-25 10:00:37] Email notification would be sent:
+Data: New booking received from abdul for computer on 2025-03-28 at 15:00
+--------------------------------------------------
+[2025-03-25 16:29:59] Email notification sent to: sales@autokingksa.com
+--------------------------------------------------
+[2025-03-25 16:29:59] WhatsApp notification: New booking received!
+Name: abdul
+Service: gearbox
+Date: 2025-03-29 16:00
+--------------------------------------------------
+[2025-03-25 16:57:26] Email notification sent to: sales@autokingksa.com
+--------------------------------------------------
+[2025-03-25 16:57:26] WhatsApp notification: New booking received!
+Name: Abdul Basit
+Service: gearbox
+Date: 2025-03-28 15:00
+--------------------------------------------------
+[2025-03-25 18:00:15] Email notification sent to: sales@autokingksa.com
+--------------------------------------------------
+[2025-03-25 18:00:15] WhatsApp notification: New booking received!
+Name: Abdul Basit
+Service: gearbox
+Date: 2025-03-14 15:00
+--------------------------------------------------
+[2025-03-25 21:54:15] Email notification sent to: sales@autokingksa.com
+--------------------------------------------------
+[2025-03-25 21:54:15] WhatsApp notification: New booking received!
+Name: Abdul Basit
+Service: engine
+Date: 2025-03-28 17:00
+--------------------------------------------------
+[2025-03-25 22:05:51] Email notification sent to: sales@autokingksa.com
+--------------------------------------------------
+[2025-03-25 22:05:51] WhatsApp notification: New booking received!
+Name: Abdul Basit
+Service: electrical
+Date: 2025-03-29 18:00
+--------------------------------------------------
+[2025-03-25 22:10:08] Email notification sent to: sales@autokingksa.com
+--------------------------------------------------
+[2025-03-25 22:10:08] WhatsApp notification: New booking received!
+Name: Abdul Basit
+Service: fahas
+Date: 2025-03-29 16:00
+--------------------------------------------------
+[2025-03-25 22:35:39] Email notification sent to: sales@autokingksa.com
+--------------------------------------------------
+[2025-03-25 22:35:39] WhatsApp notification: *🚗 New Booking Request!*
+
+*Customer Details:*
+👤 Name: Abdul Basit
+📞 Phone: 0502021314
+📧 Email: gemsabdul@gmail.com
+
+*Service Details:*
+🔧 Service: electrical
+📅 Date: 2025-05-02
+⏰ Time: 16:00
+
+*Additional Message:*
+Hellooo final testing
+--------------------------------------------------
+[2025-03-25 22:37:18] Email notification sent to: sales@autokingksa.com
+--------------------------------------------------
+[2025-03-25 22:37:18] WhatsApp notification: *🚗 New Booking Request!*
+
+*Customer Details:*
+👤 Name: Abdul Basit
+📞 Phone: 0538459995
+📧 Email: gemsabdul@gmail.com
+
+*Service Details:*
+🔧 Service: fahas
+📅 Date: 2025-03-29
+⏰ Time: 15:00
+
+*Additional Message:*
+Stage: 11.4, Final Testing complete
+--------------------------------------------------
+[2025-03-25 22:48:38] Email notification sent to: sales@autokingksa.com
+--------------------------------------------------
+[2025-03-25 22:48:38] WhatsApp notification: *🚗 New Booking Request!*
+
+*Customer Details:*
+👤 Name: Abdul Basit
+📞 Phone: 0502021314
+📧 Email: gemsabdul@gmail.com
+
+*Service Details:*
+🔧 Service: battery
+📅 Date: 2025-03-23
+⏰ Time: 19:00
+
+*Additional Message:*
+Helllo there||||
+--------------------------------------------------

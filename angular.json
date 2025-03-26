@@ -1,0 +1,176 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "Auto-King-Company": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:application",
+          "options": {
+            "outputPath": "dist/Auto-King-Company",
+            "index": "src/index.html",
+            "browser": "src/main.ts",
+            "server": "src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "src/server.ts"
+            },
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              "src/assets",
+              "src/favicon.ico",
+              "src/robots.txt",
+              "src/sitemap.xml"
+            ],
+            "styles": [
+              "src/styles.css",
+              "node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
+              "node_modules/font-awesome/css/font-awesome.css",
+              "node_modules/font-awesome/css/font-awesome.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "node_modules/animate.css/animate.min.css",
+              "node_modules/animate.css/animate.css",
+              "node_modules/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "node_modules/wowjs/dist/wow.min.js",
+              "node_modules/jquery.easing/jquery.easing.min.js",
+              "node_modules/waypoints/lib/jquery.waypoints.min.js",
+              "node_modules/counterup/jquery.counterup.min.js",
+              "node_modules/owl.carousel/dist/owl.carousel.min.js",
+              "node_modules/moment/min/moment.min.js",
+              "node_modules/moment-timezone/builds/moment-timezone-with-data.min.js",
+              "node_modules/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js",
+              "src/assets/js/main.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500MB",
+                  "maximumError": "100MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "Auto-King-Company:build:production"
+            },
+            "development": {
+              "buildTarget": "Auto-King-Company:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/Auto-King-Company/server",
+            "main": "src/main.server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@angular-devkit/build-angular:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "Auto-King-Company:build:development",
+              "serverTarget": "Auto-King-Company:server:development"
+            },
+            "production": {
+              "browserTarget": "Auto-King-Company:build:production",
+              "serverTarget": "Auto-King-Company:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@angular-devkit/build-angular:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "Auto-King-Company:build:production",
+              "serverTarget": "Auto-King-Company:server:production"
+            },
+            "development": {
+              "browserTarget": "Auto-King-Company:build:development",
+              "serverTarget": "Auto-King-Company:server:development"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "tsconfig.spec.json",
+            "assets": [
+              "src/assets",
+              "src/favicon.ico",
+              "src/robots.txt",
+              "src/sitemap.xml"
+            ],
+            "styles": [
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.css"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "analytics": "165e5839-7678-4a1b-a9c1-e591c1cdb1e5"
+  }
+}

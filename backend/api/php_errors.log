@@ -1,0 +1,27 @@
+[25-Mar-2025 22:54:29 Europe/Berlin] PHP Fatal error:  Uncaught Dotenv\Exception\InvalidFileException: Failed to parse dotenv file. Encountered an invalid name at [; DB_HOST]. in C:\xampp\htdocs\backend\vendor\vlucas\phpdotenv\src\Parser\Parser.php:30
+Stack trace:
+#0 C:\xampp\htdocs\backend\vendor\graham-campbell\result-type\src\Error.php(119): Dotenv\Parser\Parser::Dotenv\Parser\{closure}('Encountered an ...')
+#1 C:\xampp\htdocs\backend\vendor\vlucas\phpdotenv\src\Parser\Parser.php(29): GrahamCampbell\ResultType\Error->mapError(Object(Closure))
+#2 C:\xampp\htdocs\backend\vendor\vlucas\phpdotenv\src\Dotenv.php(222): Dotenv\Parser\Parser->parse('PORT=3000\n\n# My...')
+#3 C:\xampp\htdocs\backend\api\config.php(7): Dotenv\Dotenv->load()
+#4 C:\xampp\htdocs\backend\api\booking.php(34): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\backend\vendor\vlucas\phpdotenv\src\Parser\Parser.php on line 30
+[25-Mar-2025 22:56:52 Europe/Berlin] PHP Fatal error:  Uncaught Dotenv\Exception\InvalidFileException: Failed to parse dotenv file. Encountered an invalid name at [; DB_HOST]. in C:\xampp\htdocs\backend\vendor\vlucas\phpdotenv\src\Parser\Parser.php:30
+Stack trace:
+#0 C:\xampp\htdocs\backend\vendor\graham-campbell\result-type\src\Error.php(119): Dotenv\Parser\Parser::Dotenv\Parser\{closure}('Encountered an ...')
+#1 C:\xampp\htdocs\backend\vendor\vlucas\phpdotenv\src\Parser\Parser.php(29): GrahamCampbell\ResultType\Error->mapError(Object(Closure))
+#2 C:\xampp\htdocs\backend\vendor\vlucas\phpdotenv\src\Dotenv.php(222): Dotenv\Parser\Parser->parse('PORT=3000\n\n# My...')
+#3 C:\xampp\htdocs\backend\api\config.php(7): Dotenv\Dotenv->load()
+#4 C:\xampp\htdocs\backend\api\booking.php(34): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\backend\vendor\vlucas\phpdotenv\src\Parser\Parser.php on line 30
+[25-Mar-2025 23:02:48 Europe/Berlin] PHP Fatal error:  Uncaught Dotenv\Exception\InvalidFileException: Failed to parse dotenv file. Encountered an invalid name at [; DB_HOST]. in C:\xampp\htdocs\backend\vendor\vlucas\phpdotenv\src\Parser\Parser.php:30
+Stack trace:
+#0 C:\xampp\htdocs\backend\vendor\graham-campbell\result-type\src\Error.php(119): Dotenv\Parser\Parser::Dotenv\Parser\{closure}('Encountered an ...')
+#1 C:\xampp\htdocs\backend\vendor\vlucas\phpdotenv\src\Parser\Parser.php(29): GrahamCampbell\ResultType\Error->mapError(Object(Closure))
+#2 C:\xampp\htdocs\backend\vendor\vlucas\phpdotenv\src\Dotenv.php(222): Dotenv\Parser\Parser->parse('PORT=3000\n\n# My...')
+#3 C:\xampp\htdocs\backend\api\config.php(7): Dotenv\Dotenv->load()
+#4 C:\xampp\htdocs\backend\api\booking.php(34): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\backend\vendor\vlucas\phpdotenv\src\Parser\Parser.php on line 30

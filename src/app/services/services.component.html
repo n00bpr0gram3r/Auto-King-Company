@@ -1,0 +1,374 @@
+<app-topbar-component></app-topbar-component>
+
+<app-navbar></app-navbar>
+<app-page-header title="Services" subtitle="Explore our services"></app-page-header>
+
+<style>
+    .service-section {
+        background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(assets/img/carousel-bg-2.jpg) no-repeat center center;
+        background-size: cover;
+        color: #ffffff;
+        padding: 80px 0;
+    }
+    
+    .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    
+    .section-title h2 {
+        color: #ffffff;
+        font-size: 40px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+    
+    .section-title p {
+        color: #cccccc;
+        font-size: 16px;
+    }
+    
+    .section-title .line {
+        height: 3px;
+        width: 80px;
+        background-color: #e51515;
+        margin: 0 auto 20px;
+    }
+    
+    .service-card {
+        background-color: #222222;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    }
+    
+    .service-img {
+        height: 220px;
+        overflow: hidden;
+    }
+    
+    .service-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+    }
+    
+    .service-card:hover .service-img img {
+        transform: scale(1.1);
+    }
+    
+    .service-content {
+        padding: 25px;
+    }
+    
+    .service-content h3 {
+        color: #ffffff;
+        font-size: 22px;
+        font-weight: 600;
+        margin-bottom: 15px;
+    }
+    
+    .service-content p {
+        color: #cccccc;
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    
+    .service-features {
+        margin-bottom: 20px;
+    }
+    
+    .service-features li {
+        color: #cccccc;
+        margin-bottom: 10px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .service-features i {
+        color: #e51515;
+        margin-right: 10px;
+    }
+    
+    .service-btn {
+        background-color: #e51515;
+        color: #ffffff;
+        padding: 10px 25px;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: 600;
+        transition: background-color 0.3s;
+    }
+    
+    .service-btn:hover {
+        background-color: #b01212;
+    }
+    
+    .service-btn i {
+        margin-left: 8px;
+    }
+</style>
+
+<!-- Service Section Start -->
+<section class="service-section">
+    <div class="container">
+        <div class="section-title">
+            <div class="line"></div>
+            <h2>{{ getTranslation('services.title') }}</h2>
+            <p>{{ getTranslation('services.subtitle') }}</p>
+        </div>
+        
+        <div class="row">
+            <!-- Service 1 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="./assets/img/service-1.jpg" alt="Diagnostic Test">
+                    </div>
+                    <div class="service-content">
+                        <h3>{{ getTranslation('services.categories.diagnostic.title') }}</h3>
+                        <p>{{ getTranslation('services.categories.diagnostic.description') }}</p>
+                        <ul class="service-features">
+                            <li><i class="fa fa-check"></i> {{ getTranslation('services.categories.diagnostic.features.0') }}</li>
+                            <li><i class="fa fa-check"></i> {{ getTranslation('services.categories.diagnostic.features.1') }}</li>
+                            <li><i class="fa fa-check"></i> {{ getTranslation('services.categories.diagnostic.features.2') }}</li>
+                        </ul>
+                        <a href="./service.html" class="service-btn">{{ getTranslation('cta.learnMore') }} <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Service 2 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="./assets/img/service-2.jpg" alt="Auto Mechanical Work">
+                    </div>
+                    <div class="service-content">
+                        <h3>{{ getTranslation('services.categories.mechanical.title') }}</h3>
+                        <p>{{ getTranslation('services.categories.mechanical.description') }}</p>
+                        <ul class="service-features">
+                            <li><i class="fa fa-check"></i> {{ getTranslation('services.categories.mechanical.features.0') }}</li>
+                            <li><i class="fa fa-check"></i> {{ getTranslation('services.categories.mechanical.features.1') }}</li>
+                            <li><i class="fa fa-check"></i> {{ getTranslation('services.categories.mechanical.features.2') }}</li>
+                        </ul>
+                        <a href="./service.html" class="service-btn">{{ getTranslation('cta.learnMore') }} <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Service 3 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="./assets/img/service-3.jpg" alt="Auto Electrical Work">
+                    </div>
+                    <div class="service-content">
+                        <h3>{{ getTranslation('services.categories.electrical.title') }}</h3>
+                        <p>{{ getTranslation('services.categories.electrical.description') }}</p>
+                        <ul class="service-features">
+                            <li><i class="fa fa-check"></i> {{ getTranslation('services.categories.electrical.features.0') }}</li>
+                            <li><i class="fa fa-check"></i> {{ getTranslation('services.categories.electrical.features.1') }}</li>
+                            <li><i class="fa fa-check"></i> {{ getTranslation('services.categories.electrical.features.2') }}</li>
+                        </ul>
+                        <a href="./service.html" class="service-btn">{{ getTranslation('cta.learnMore') }} <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Service 4 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="./assets/img/service-5.jpg" alt="Denting & Painting Work">
+                    </div>
+                    <div class="service-content">
+                        <h3>{{ getTranslation('services.categories.denting.title') }}</h3>
+                        <p>{{ getTranslation('services.categories.denting.description') }}</p>
+                        <ul class="service-features">
+                            <li><i class="fa fa-check"></i> {{ getTranslation('services.categories.denting.features.0') }}</li>
+                            <li><i class="fa fa-check"></i> {{ getTranslation('services.categories.denting.features.1') }}</li>
+                            <li><i class="fa fa-check"></i> {{ getTranslation('services.categories.denting.features.2') }}</li>
+                        </ul>
+                        <a href="./service.html" class="service-btn">{{ getTranslation('cta.learnMore') }} <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Service 5 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="./assets/img/service-4.jpg" alt="Oil changing">
+                    </div>
+                    <div class="service-content">
+                        <h3>{{ getTranslation('services.categories.oil.title') }}</h3>
+                        <p>{{ getTranslation('services.categories.oil.description') }}</p>
+                        <ul class="service-features">
+                            <li><i class="fa fa-check"></i> {{ getTranslation('services.categories.oil.features.0') }}</li>
+                            <li><i class="fa fa-check"></i> {{ getTranslation('services.categories.oil.features.1') }}</li>
+                            <li><i class="fa fa-check"></i> {{ getTranslation('services.categories.oil.features.2') }}</li>
+                        </ul>
+                        <a href="./service.html" class="service-btn">{{ getTranslation('cta.learnMore') }} <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Service 6 -->
+            <div class="col-lg-4 col-md-6">
+                <div class="service-card">
+                    <div class="service-img">
+                        <img src="./assets/img/service-6.jpg" alt="Tire Replacement">
+                    </div>
+                    <div class="service-content">
+                        <h3>{{ getTranslation('services.categories.tire.title') }}</h3>
+                        <p>{{ getTranslation('services.categories.tire.description') }}</p>
+                        <ul class="service-features">
+                            <li><i class="fa fa-check"></i> {{ getTranslation('services.categories.tire.features.0') }}</li>
+                            <li><i class="fa fa-check"></i> {{ getTranslation('services.categories.tire.features.1') }}</li>
+                                <li><i class="fa fa-check"></i> {{ getTranslation('services.categories.tire.features.2') }}</li>
+                        </ul>
+                        <a href="./service.html" class="service-btn">{{ getTranslation('cta.learnMore') }} <i class="fa fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Service Section End -->
+
+<!-- Why Choose Us Section -->
+<section class="why-choose-section py-5">
+    <style>
+        .why-choose-section {
+            background-color: #161616;
+            padding: 80px 0;
+        }
+        
+        .why-choose-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .why-choose-title h2 {
+            color: #ffffff;
+            font-size: 40px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .why-choose-title p {
+            color: #cccccc;
+            font-size: 16px;
+        }
+        
+        .why-choose-title .line {
+            height: 3px;
+            width: 80px;
+            background-color: #e51515;
+            margin: 0 auto 20px;
+        }
+        
+        .reason-card {
+            background-color: #222;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+            transition: transform 0.3s, background-color 0.3s;
+            height: 100%;
+        }
+        
+        .reason-card:hover {
+            transform: translateY(-10px);
+            background-color: #e51515;
+        }
+        
+        .reason-card i {
+            font-size: 50px;
+            color: #e51515;
+            margin-bottom: 20px;
+            transition: color 0.3s;
+        }
+        
+        .reason-card:hover i {
+            color: #fff;
+        }
+        
+        .reason-card h4 {
+            color: #ffffff;
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        
+        .reason-card p {
+            color: #cccccc;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        
+        .reason-card:hover p {
+            color: #ffffff;
+        }
+    </style>
+    
+    <div class="container">
+        <div class="why-choose-title">
+            <div class="line"></div>
+            <h2>{{ getTranslation('whyChooseTitle') }}</h2>
+            <p>{{ getTranslation('whyChooseSubtitle') }}</p>
+        </div>
+        
+        <div class="row">
+            <!-- Reason 1 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="reason-card">
+                    <i class="fa fa-tools"></i>
+                    <h4>{{ getTranslation('expertiseTitle') }}</h4>
+                    <p>{{ getTranslation('expertiseDesc') }}</p>
+                </div>
+            </div>
+            
+            <!-- Reason 2 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="reason-card">
+                    <i class="fa fa-check-circle"></i>
+                    <h4>{{ getTranslation('qualityGuaranteeTitle') }}</h4>
+                    <p>{{ getTranslation('qualityGuaranteeDesc') }}</p>
+                </div>
+            </div>
+            
+            <!-- Reason 3 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="reason-card">
+                    <i class="fa fa-clock"></i>
+                    <h4>{{ getTranslation('timelyTitle') }}</h4>
+                    <p>{{ getTranslation('timelyDesc') }}</p>
+                </div>
+            </div>
+            
+            <!-- Reason 4 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="reason-card">
+                    <i class="fa fa-money-bill-wave"></i>
+                    <h4>{{ getTranslation('affordableTitle') }}</h4>
+                    <p>{{ getTranslation('affordableDesc') }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Why Choose Us Section End -->
+
+<app-footer></app-footer>
